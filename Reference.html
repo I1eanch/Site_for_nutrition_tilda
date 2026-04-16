@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сам себе нутрициолог — Академия натуропатии «Система здоровья»</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2E5E;--blue:#2E7BB4;--blue-light:#4A9FD4;--blue-pale:#E8F4FB;--blue-soft:#C8E4F5;--sky:#6DBCE8;--gold:#E8A82A;--gold-light:#F5C842;--white:#FFFFFF;--gray:#F7F9FC;--text:#1B2E5E;--text-mid:#3D5270;--text-muted:#7A90B0;--border:rgba(46,123,180,0.15);--red-soft:#E85D5D;--green-soft:#27AE60}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);pointer-events:none;z-index:0}
+.blob-blue{background:rgba(107,188,232,0.22)}.blob-pink{background:rgba(240,180,190,0.2)}.blob-gold{background:rgba(232,168,42,0.13)}
+.mol{position:absolute;pointer-events:none;z-index:1;opacity:.55}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nb{font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.3}.nb span{color:var(--blue)}
+.nl{display:flex;gap:28px;list-style:none}.nl a{font-size:13px;color:var(--text-mid);text-decoration:none;font-weight:500;transition:color .2s}.nl a:hover{color:var(--blue)}
+.ncta{background:var(--blue);color:var(--white)!important;padding:8px 20px;border-radius:100px;font-size:13px!important;font-weight:700!important;transition:background .2s!important}.ncta:hover{background:var(--navy)!important}
+.hero{min-height:100vh;padding-top:64px;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--white)}
+.hc{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:80px 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-pale);border:1.5px solid var(--blue-soft);border-radius:100px;padding:6px 16px;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.hlbl{font-size:12px;color:var(--text-muted);font-weight:500;margin-bottom:8px;letter-spacing:.03em}
+.ht{font-size:clamp(30px,4vw,50px);font-weight:800;color:var(--navy);line-height:1.12;margin-bottom:18px}
+.ht-acc{color:var(--blue)}
+.ht-gold{color:var(--gold)}
+.hs{font-size:15px;color:var(--text-mid);font-weight:400;line-height:1.75;margin-bottom:32px;max-width:540px}
+.hs strong{color:var(--navy);font-weight:700}
+.dpills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.dp{border:1.5px solid var(--blue-soft);border-radius:100px;padding:7px 16px;font-size:12px;font-weight:600;color:var(--navy);background:var(--blue-pale);transition:all .2s}
+.dp:hover{border-color:var(--blue);background:var(--white)}
+.crow{display:flex;gap:14px;flex-wrap:wrap}
+.hcard{background:var(--white);border:2px solid var(--blue-soft);border-radius:24px;padding:38px 34px;box-shadow:0 8px 48px rgba(46,123,180,.12);position:relative;z-index:2}
+.hcbadge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);font-size:11px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap;letter-spacing:.06em;text-transform:uppercase}
+.clbl{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.cprice{font-size:46px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.cpsub{font-size:13px;color:var(--text-muted);margin-bottom:26px}
+.clist{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.clist li{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:var(--text-mid);line-height:1.4}
+.clist li::before{content:'';width:18px;height:18px;min-width:18px;border-radius:50%;background:var(--blue-pale) url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%232E7BB4' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;border:1.5px solid var(--blue-soft);margin-top:1px}
+.cnote{text-align:center;font-size:11px;color:var(--text-muted);margin-top:10px}
+.btn{display:inline-block;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:14px 32px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.btn-blue{background:var(--blue);color:var(--white)}.btn-blue:hover{background:var(--navy);transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,123,180,.3)}
+.btn-gold{background:var(--gold);color:var(--white)}.btn-gold:hover{background:#d4921e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,168,42,.35)}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy)}.btn-outline:hover{background:var(--navy);color:var(--white)}
+.btn-full{width:100%;text-align:center}
+.sw{position:relative;overflow:hidden}
+.si{max-width:1100px;margin:0 auto;padding:88px 48px;position:relative;z-index:2}
+.lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.stitle{font-size:clamp(26px,3.5vw,42px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:14px}
+.sdesc{font-size:15px;color:var(--text-mid);font-weight:400;line-height:1.7;max-width:620px}
+.bg-pale{background:var(--blue-pale)}.bg-navy{background:var(--navy)}.bg-gray{background:var(--gray)}
+.srow{display:flex;background:var(--white);border:1.5px solid var(--blue-soft);border-radius:20px;overflow:hidden}
+.sitem{flex:1;padding:26px 16px;text-align:center;border-right:1.5px solid var(--blue-soft)}.sitem:last-child{border-right:none}
+.sn{font-size:38px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}.sn span{color:var(--blue)}
+.sl{font-size:11px;color:var(--text-muted);font-weight:500}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.pcard{background:var(--white);border-radius:16px;padding:26px 22px;border:1.5px solid var(--blue-soft);transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,123,180,.1)}
+.pn{font-size:34px;font-weight:800;color:var(--blue-soft);line-height:1;margin-bottom:10px}
+.pt{font-size:14px;color:var(--text-mid);line-height:1.6}.pt strong{color:var(--navy);font-weight:700;display:block;margin-bottom:3px}
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.iq{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,30px);line-height:1.5;color:var(--white);font-style:italic}
+.iq span{color:var(--gold-light);font-style:normal;font-weight:700}
+.ips{display:flex;flex-direction:column;gap:18px}
+.ip{display:flex;gap:13px;align-items:flex-start}
+.idot{width:36px;height:36px;min-width:36px;border-radius:50%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:15px}
+.itxt h4{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
+.itxt p{font-size:12px;color:rgba(255,255,255,.55);line-height:1.5}
+.schema-wrap{margin-top:44px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px 32px}
+.schema-title{font-size:13px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px;text-align:center}
+.schema-row{display:flex;align-items:center;gap:20px;justify-content:center;flex-wrap:wrap}
+.schema-symptoms{display:flex;flex-direction:column;gap:6px;min-width:180px}
+.schema-sym{background:rgba(232,93,93,.15);border:1px solid rgba(232,93,93,.3);border-radius:10px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.75);font-weight:500;text-align:center}
+.schema-arrow{font-size:28px;color:var(--gold-light);font-weight:800;flex-shrink:0}
+.schema-cause{background:rgba(232,168,42,.15);border:2px solid rgba(232,168,42,.4);border-radius:16px;padding:22px 28px;text-align:center;min-width:200px}
+.schema-cause h4{font-size:15px;font-weight:800;color:var(--gold-light);margin-bottom:6px}
+.schema-cause p{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+.schema-arrow2{font-size:28px;color:var(--green-soft);font-weight:800;flex-shrink:0}
+.schema-result{background:rgba(39,174,96,.12);border:2px solid rgba(39,174,96,.35);border-radius:16px;padding:22px 28px;text-align:center;min-width:180px}
+.schema-result h4{font-size:15px;font-weight:800;color:var(--green-soft);margin-bottom:6px}
+.schema-result p{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+.rgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+.rc{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:26px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.rc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:20px 20px 0 0}
+.rc.rc-gut::before{background:linear-gradient(90deg,#E85D5D,#F5C842)}
+.rc.rc-energy::before{background:linear-gradient(90deg,var(--blue),var(--sky))}
+.rc.rc-hormones::before{background:linear-gradient(90deg,#C27AE8,#F5C842)}
+.rc.rc-pressure::before{background:linear-gradient(90deg,#E85D5D,var(--blue))}
+.rc.rc-thyroid::before{background:linear-gradient(90deg,#4A9FD4,#27AE60)}
+.rc.rc-skin::before{background:linear-gradient(90deg,#F5C842,#E8A82A)}
+.rc:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,123,180,.1)}
+.rcat{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:100px;margin-bottom:12px}
+.rcat-gut{color:#C0392B;background:rgba(192,57,43,.08)}
+.rcat-energy{color:var(--blue);background:var(--blue-pale)}
+.rcat-hormones{color:#8E44AD;background:rgba(142,68,173,.08)}
+.rcat-pressure{color:#C0392B;background:rgba(192,57,43,.08)}
+.rcat-thyroid{color:#2E7BB4;background:var(--blue-pale)}
+.rcat-skin{color:#E8A82A;background:rgba(232,168,42,.1)}
+.rb{font-size:12px;color:var(--text-muted);padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:12px;line-height:1.55}
+.rb::before{content:'До: ';font-weight:700;color:#C0392B}
+.ra{font-size:13px;color:var(--navy);font-weight:600;line-height:1.55}
+.ra::before{content:'После: ';font-weight:700;color:#27AE60}
+.rp{margin-top:14px;font-size:11px;color:var(--text-muted);font-weight:500}
+.ptabs{display:flex;gap:4px;margin:36px 0 28px;background:rgba(46,123,180,.08);padding:4px;border-radius:100px;width:fit-content}
+.tbtn{padding:9px 22px;border:none;background:transparent;border-radius:100px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;color:var(--text-muted);cursor:pointer;transition:all .2s;white-space:nowrap}
+.tbtn.active{background:var(--blue);color:var(--white);font-weight:700}
+.tc{display:none}.tc.active{display:block}
+.mhdr{display:flex;gap:18px;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:2px solid var(--blue-soft)}
+.mn{font-size:52px;font-weight:800;color:var(--blue-soft);line-height:1;flex-shrink:0}
+.mi h3{font-size:21px;font-weight:800;color:var(--navy);margin-bottom:4px}.mi p{font-size:12px;color:var(--text-muted);font-style:italic}
+.ll{display:flex;flex-direction:column}
+.lr{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);align-items:flex-start}.lr:last-child{border-bottom:none}
+.lno{font-size:11px;font-weight:700;color:var(--blue);min-width:26px;padding-top:1px}
+.lt{font-size:13px;color:var(--text-mid);line-height:1.5}.lt strong{color:var(--navy);font-weight:700}
+.lt-benefit{display:block;font-size:11px;color:var(--blue);font-weight:500;margin-top:3px;font-style:italic}
+.pnt{background:var(--blue-pale);border-left:3px solid var(--blue);padding:13px 16px;margin-top:18px;border-radius:0 10px 10px 0;font-size:12px;color:var(--text-mid);line-height:1.6}
+.pnt strong{color:var(--blue);font-weight:700}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.fcard{background:var(--white);border:1.5px solid var(--border);border-radius:18px;padding:26px 18px;text-align:center;transition:transform .2s,border-color .2s}
+.fcard:hover{transform:translateY(-4px);border-color:var(--blue)}
+.fic{width:52px;height:52px;border-radius:50%;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 14px}
+.ft{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}.fd{font-size:12px;color:var(--text-muted);line-height:1.55}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+.bcard{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:22px;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.bcard::after{content:'';position:absolute;bottom:0;right:0;width:70px;height:70px;background:var(--blue-pale);border-radius:50%;transform:translate(28px,28px)}
+.bcard:hover{border-color:var(--blue);transform:translateY(-3px)}
+.btag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:rgba(232,168,42,.1);border:1px solid rgba(232,168,42,.3);display:inline-block;padding:3px 10px;border-radius:100px;margin-bottom:9px}
+.btit{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.4}
+.bdesc{font-size:12px;color:var(--text-muted);line-height:1.5;position:relative;z-index:1}
+.agrid{display:grid;grid-template-columns:360px 1fr;gap:60px;align-items:center}
+.aph{width:100%;aspect-ratio:3/4;border-radius:24px;background:linear-gradient(135deg,#C8E4F5 0%,#E8F4FB 60%,#F0E8F5 100%);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.aph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.aph-pl{font-size:110px;color:rgba(255,255,255,.35);font-family:'Playfair Display',serif;font-style:italic;padding-bottom:16px}
+.anb{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);padding:8px 18px;border-radius:100px;text-align:center;white-space:nowrap}
+.anb .al{font-size:10px;font-weight:500;display:block;opacity:.85;letter-spacing:.05em}
+.anb .an{font-size:14px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.atag{display:inline-block;background:var(--blue);color:var(--white);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:18px}
+.aname{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--navy);margin-bottom:4px}
+.arole{font-size:13px;color:var(--blue);font-weight:600;margin-bottom:24px}
+.atxt{font-size:14px;color:var(--text-mid);line-height:1.8;margin-bottom:22px}
+.alist{list-style:none;display:flex;flex-direction:column;gap:9px}
+.alist li{display:flex;gap:9px;font-size:13px;color:var(--text-mid);align-items:flex-start;line-height:1.45}
+.alist li strong{color:var(--navy);font-weight:700}
+.alist li::before{content:'';width:6px;height:6px;min-width:6px;background:var(--blue);border-radius:50%;margin-top:6px}
+/* SPEAKERS */
+.spk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.spk-card{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;text-align:center;transition:transform .2s,box-shadow .2s}
+.spk-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(46,123,180,.1)}
+.spk-photo{width:130px;height:130px;border-radius:50%;margin:0 auto 18px;overflow:hidden;background:linear-gradient(135deg,var(--blue-pale),#F0E8F5);display:flex;align-items:center;justify-content:center;border:3px solid var(--blue-soft)}
+.spk-photo img{width:100%;height:100%;object-fit:cover}
+.spk-photo-pl{font-size:40px;color:var(--blue-soft);font-family:'Playfair Display',serif;font-weight:700}
+.spk-name{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.spk-role{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:14px}
+.spk-list{list-style:none;display:flex;flex-direction:column;gap:6px;text-align:left}
+.spk-list li{display:flex;gap:8px;font-size:12px;color:var(--text-mid);line-height:1.45;align-items:flex-start}
+.spk-list li::before{content:'';width:5px;height:5px;min-width:5px;background:var(--blue);border-radius:50%;margin-top:5px}
+.cost-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;margin-bottom:48px}
+.cost-card{border-radius:20px;padding:28px 24px}
+.cost-card.cost-old{background:rgba(192,57,43,.04);border:1.5px solid rgba(192,57,43,.15)}
+.cost-card.cost-new{background:rgba(39,174,96,.04);border:1.5px solid rgba(39,174,96,.2)}
+.cost-card h4{font-size:14px;font-weight:700;margin-bottom:16px}
+.cost-card.cost-old h4{color:#C0392B}
+.cost-card.cost-new h4{color:#27AE60}
+.cost-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:13px;color:var(--text-mid)}
+.cost-item:last-child{border-bottom:none}
+.cost-item .ci-price{font-weight:700;color:var(--navy);white-space:nowrap;margin-left:12px}
+.cost-total{margin-top:14px;padding-top:14px;border-top:2px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:15px;font-weight:800;color:var(--navy)}
+.pcgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:18px;margin-top:44px}
+.pcrd{background:var(--white);border:2px solid var(--border);border-radius:24px;padding:34px}
+.pcrd.feat{background:var(--navy);border-color:var(--navy);position:relative}
+.pfbadge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);font-size:11px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap;letter-spacing:.06em;text-transform:uppercase}
+.plbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+.pcrd.feat .plbl{color:rgba(255,255,255,.45)}
+.pamt-old{font-size:22px;font-weight:600;color:var(--text-muted);text-decoration:line-through;line-height:1;margin-bottom:4px}
+.pcrd.feat .pamt-old{color:rgba(255,255,255,.35)}
+.pdisc{display:inline-block;background:var(--red-soft);color:var(--white);font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;letter-spacing:.04em}
+.pamt{font-size:50px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.pcrd.feat .pamt{color:var(--white)}
+.pcur{font-size:12px;color:var(--text-muted);margin-bottom:26px}
+.pcrd.feat .pcur{color:rgba(255,255,255,.45)}
+.pfl{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.pfl li{display:flex;gap:9px;font-size:13px;color:var(--text-mid);line-height:1.4}
+.pcrd.feat .pfl li{color:rgba(255,255,255,.8)}
+.pfl li::before{content:'✓';color:var(--blue);font-weight:700;font-size:12px;flex-shrink:0;margin-top:1px}
+.pcrd.feat .pfl li::before{color:var(--gold-light)}
+.faq{margin-top:44px}
+.fi{border-bottom:1px solid var(--border)}
+.fq{padding:18px 0;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;transition:color .2s;user-select:none}
+.fq:hover{color:var(--blue)}
+.ftog{width:26px;height:26px;min-width:26px;border-radius:50%;background:var(--blue-pale);border:1.5px solid var(--blue-soft);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--blue);transition:all .2s;font-weight:300}
+.fi.open .ftog{background:var(--blue);color:var(--white);transform:rotate(45deg)}
+.fa{font-size:13px;color:var(--text-mid);line-height:1.7;padding-bottom:18px;display:none}
+.fi.open .fa{display:block}
+.ftitle{font-size:clamp(26px,4vw,46px);font-weight:800;color:var(--white);line-height:1.2;margin-bottom:14px}
+.ftitle span{color:var(--gold-light)}
+.fsub{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7;max-width:580px;margin:0 auto 36px;font-weight:400}
+.fpn{font-size:12px;color:rgba(255,255,255,.35);margin-top:10px}
+footer{background:#0E1C3E;padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbrnd{font-size:13px;font-weight:700;color:rgba(255,255,255,.55);line-height:1.4}.fbrnd span{color:var(--sky)}
+.fnote{font-size:11px;color:rgba(255,255,255,.22);max-width:480px;line-height:1.5}
+@media(max-width:900px){
+  nav{padding:0 20px}.nl{display:none}
+  .hc{grid-template-columns:1fr;gap:36px;padding:48px 20px}
+  .si{padding:56px 20px}
+  .pgrid,.bgrid{grid-template-columns:1fr}
+  .igrid,.agrid,.pcgrid,.cost-grid{grid-template-columns:1fr;gap:36px}
+  .rgrid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+  .srow{flex-wrap:wrap}.sitem{min-width:50%}
+  .ptabs{flex-wrap:wrap;width:100%}
+  .schema-row{flex-direction:column}
+  .schema-arrow,.schema-arrow2{transform:rotate(90deg)}
+  .spk-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nb">Академия натуропатии<br><span>«Система здоровья»</span></div>
+  <ul class="nl">
+    <li><a href="#symptoms">Симптомы</a></li>
+    <li><a href="#program">Программа</a></li>
+    <li><a href="#about">Об авторе</a></li>
+    <li><a href="#pricing">Стоимость</a></li>
+    <li><a href="#pricing" class="ncta">Записаться</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="blob blob-pink" style="width:420px;height:420px;top:-80px;right:-80px;"></div>
+  <div class="blob blob-blue" style="width:480px;height:480px;bottom:-120px;left:-120px;"></div>
+  <svg class="mol" style="right:0;bottom:0;width:300px;height:300px;" viewBox="0 0 300 300" fill="none">
+    <circle cx="190" cy="170" r="42" fill="#E8A82A" opacity=".85"/><circle cx="190" cy="170" r="30" fill="#E8A82A"/>
+    <circle cx="148" cy="184" r="15" fill="#F5C842" opacity=".7"/><circle cx="236" cy="138" r="21" fill="#F5C842" opacity=".55"/>
+    <circle cx="248" cy="196" r="11" fill="#E8A82A" opacity=".45"/>
+    <line x1="148" y1="184" x2="190" y2="170" stroke="#C4933F" stroke-width="1.5" opacity=".35"/>
+    <line x1="236" y1="138" x2="190" y2="170" stroke="#C4933F" stroke-width="1.5" opacity=".35"/>
+    <line x1="248" y1="196" x2="190" y2="170" stroke="#C4933F" stroke-width="1.5" opacity=".35"/>
+  </svg>
+  <div class="hc">
+    <div>
+      <div class="hbadge">Онлайн-программа · 30 дней · Результат с первой недели</div>
+      <div class="hlbl">Академия натуропатии «Система здоровья»</div>
+      <h1 class="ht">САМ СЕБЕ<br><span class="ht-acc">НУТРИЦИОЛОГ</span><br><span style="font-size:clamp(18px,2.2vw,28px);color:var(--text-mid);font-weight:600;line-height:1.4;">от причины — к здоровому телу</span></h1>
+      <p class="hs">Мы не лечим каждый симптом по отдельности. За 30 дней вы поймёте, <strong>почему организм даёт сбой</strong>, и запустите восстановление через работу со стрессом, ЖКТ и детоксикацией — <strong>широким фронтом</strong>.</p>
+      <div class="dpills">
+        <div class="dp">Вздутие и ЖКТ</div>
+        <div class="dp">Нет энергии</div>
+        <div class="dp">Отёки</div>
+        <div class="dp">Щитовидка</div>
+        <div class="dp">Давление</div>
+        <div class="dp">Потливость</div>
+        <div class="dp">Либидо</div>
+        <div class="dp">Лишний вес</div>
+      </div>
+      <div class="crow">
+        <a href="#pricing" class="btn btn-blue">Записаться на программу</a>
+        <a href="#symptoms" class="btn btn-outline">Узнаю ли я себя?</a>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="hcbadge">⭐ Программа · 30 дней</div>
+      <div class="clbl">Что вы получите</div>
+      <div style="font-size:20px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:20px;">Системное восстановление<br>организма <span style="color:var(--blue);">широким фронтом</span></div>
+      <ul class="clist">
+        <li>26 уроков — от причины к восстановлению</li>
+        <li>Поддержка кураторов-нутрициологов каждый день</li>
+        <li>Ежедневные практики и чек-листы</li>
+        <li>6 бонусных модулей в подарок</li>
+        <li>Результаты уже с первой недели</li>
+        <li>Доступ к материалам 5 месяцев</li>
+      </ul>
+      <a href="#pricing" class="btn btn-gold btn-full">Узнать стоимость и записаться</a>
+      <div class="cnote">Следующий поток · ограниченный набор</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="sw bg-pale"><div class="si" style="padding-top:44px;padding-bottom:44px;">
+  <div class="srow">
+    <div class="sitem"><div class="sn">6 000<span>+</span></div><div class="sl">учеников из 35+ стран</div></div>
+    <div class="sitem"><div class="sn">30</div><div class="sl">дней до результата</div></div>
+    <div class="sitem"><div class="sn">93<span>%</span></div><div class="sl">замечают улучшение к 7-му дню</div></div>
+    <div class="sitem"><div class="sn">7<span>+</span></div><div class="sl">лет опыта автора</div></div>
+  </div>
+</div></div>
+
+<!-- PAIN / SYMPTOMS -->
+<div class="sw bg-pale" id="symptoms">
+  <div class="blob blob-blue" style="width:380px;height:380px;bottom:-100px;right:-80px;opacity:.4;"></div>
+  <div class="si">
+    <span class="lbl">Узнаёте себя?</span>
+    <h2 class="stitle">Эти симптомы мешают вам жить —<br>а врачи говорят «всё в норме»</h2>
+    <p class="sdesc">Вы ходите по специалистам, сдаёте анализы — и слышите: «У вас всё хорошо». Но вы-то чувствуете, что нет.</p>
+    <div class="pgrid">
+      <div class="pcard"><div class="pn">01</div><div class="pt"><strong>Вздутие и метеоризм</strong>Живот раздувается после каждого приёма пищи. Стыдно носить обтягивающее. Газы, тяжесть, урчание — стали фоном жизни</div></div>
+      <div class="pcard"><div class="pn">02</div><div class="pt"><strong>Нулевая энергия</strong>Встаёте уже уставшей. Кофе не помогает. К обеду хочется лечь. К вечеру нет сил ни на что, кроме дивана</div></div>
+      <div class="pcard"><div class="pn">03</div><div class="pt"><strong>Отёки каждый день</strong>Утром — лицо. Вечером — ноги. Пьёте меньше воды — не помогает. Кольца врезаются в пальцы</div></div>
+      <div class="pcard"><div class="pn">04</div><div class="pt"><strong>Проблемы с давлением</strong>Скачки без причины: то вверх, то вниз. Сердцебиение, приливы жара. Врач назначает таблетки — но причину не ищет</div></div>
+      <div class="pcard"><div class="pn">05</div><div class="pt"><strong>Щитовидка «шалит»</strong>Выпадают волосы, всё время мёрзнете, вес не уходит. Или наоборот — потливость, раздражительность, тремор</div></div>
+      <div class="pcard"><div class="pn">06</div><div class="pt"><strong>Потливость и жар</strong>Бросает в пот без причины. Стыдно на работе, на встречах. Неловко рядом с людьми — и это не климакс</div></div>
+      <div class="pcard"><div class="pn">07</div><div class="pt"><strong>Упавшее либидо</strong>Желание пропало. Близость стала обязанностью. Это влияет на отношения — и вы чувствуете вину</div></div>
+      <div class="pcard"><div class="pn">08</div><div class="pt"><strong>Вес стоит намертво</strong>Диеты, ограничения, подсчёт калорий — а цифра на весах не сдвигается. Или сдвигается и возвращается</div></div>
+      <div class="pcard"><div class="pn">09</div><div class="pt"><strong>Тревога и плохой сон</strong>Мысли крутятся по ночам. Просыпаетесь в 3–4 утра. Днём — туман в голове. Срывы стали нормой</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- INSIGHT — CORE MESSAGE -->
+<div class="sw bg-navy">
+  <div class="blob blob-gold" style="width:280px;height:280px;top:-40px;right:80px;opacity:.18;"></div>
+  <svg class="mol" style="right:40px;top:50%;transform:translateY(-50%);width:160px;height:160px;opacity:.18;" viewBox="0 0 160 160" fill="none">
+    <circle cx="80" cy="80" r="26" fill="white"/><circle cx="44" cy="54" r="14" fill="white" opacity=".6"/>
+    <circle cx="118" cy="46" r="11" fill="white" opacity=".5"/><circle cx="125" cy="108" r="9" fill="white" opacity=".4"/>
+    <line x1="80" y1="80" x2="44" y2="54" stroke="white" stroke-width="1.5"/>
+    <line x1="80" y1="80" x2="118" y2="46" stroke="white" stroke-width="1.5"/>
+    <line x1="80" y1="80" x2="125" y2="108" stroke="white" stroke-width="1.5"/>
+  </svg>
+  <div class="si">
+    <div class="igrid">
+      <div>
+        <span class="lbl" style="color:rgba(255,255,255,.4)">Ключевая идея</span>
+        <p class="iq">Вздутие, давление, отёки, щитовидка, либидо —<br>это не <span>разные болезни</span>.<br><br>Это один и тот же сбой,<br>у которого есть <span>одна причина</span>.</p>
+      </div>
+      <div class="ips">
+        <div class="ip"><div class="idot">⚡</div><div class="itxt"><h4>Хронический стресс запускает каскад</h4><p>Кортизол бьёт по надпочечникам → гормоны летят → ЖКТ выключается → токсины накапливаются. Одна причина — десятки симптомов</p></div></div>
+        <div class="ip"><div class="idot">🌿</div><div class="itxt"><h4>Нарушенный ЖКТ — корень 80% жалоб</h4><p>Когда пищеварение сбито — не усваиваются витамины, накапливаются токсины, страдают гормоны, кожа, энергия</p></div></div>
+        <div class="ip"><div class="idot">🔄</div><div class="itxt"><h4>Мы не лечим симптомы — мы убираем причину</h4><p>Поэтому у наших учениц уходят такие разные проблемы: от вздутия до давления, от отёков до либидо</p></div></div>
+        <div class="ip"><div class="idot">✦</div><div class="itxt"><h4>Тело восстанавливается само</h4><p>Когда вы убираете то, что мешает — организм запускает восстановление. Вес, энергия, гормоны приходят в норму как следствие</p></div></div>
+      </div>
+    </div>
+
+    <!-- VISUAL SCHEMA -->
+    <div class="schema-wrap">
+      <div class="schema-title">Как это работает</div>
+      <div class="schema-row">
+        <div class="schema-symptoms">
+          <div class="schema-sym">Вздутие, метеоризм</div>
+          <div class="schema-sym">Отёки, потливость</div>
+          <div class="schema-sym">Давление, щитовидка</div>
+          <div class="schema-sym">Упавшее либидо</div>
+          <div class="schema-sym">Нет энергии, лишний вес</div>
+        </div>
+        <div class="schema-arrow">←</div>
+        <div class="schema-cause">
+          <h4>Одна причина</h4>
+          <p>Хронический стресс +<br>нарушенный ЖКТ +<br>токсическая нагрузка</p>
+        </div>
+        <div class="schema-arrow2">→</div>
+        <div class="schema-result">
+          <h4>Наш подход</h4>
+          <p>Убираем причину<br>широким фронтом —<br>симптомы уходят сами</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="sw">
+  <div class="blob blob-pink" style="width:280px;height:280px;top:0;right:0;opacity:.35;"></div>
+  <div class="si">
+    <span class="lbl">Реальные результаты</span>
+    <h2 class="stitle">Разные симптомы — один подход —<br>и все они уходят</h2>
+    <p class="sdesc">Все участники отмечают лёгкую потерю лишних килограмм, но это не сама цель программы, а лишь приятный бонус. Главное — уходят причины, а вместе с ними симптомы.</p>
+    <div class="rgrid">
+      <div class="rc rc-gut" style="grid-column:1/-1;">
+        <div class="rcat rcat-gut">Комплексное восстановление · Результат за 2 года</div>
+        <div class="rb">65 лет, 52 размер одежды, на горизонте операция по замене сустава. Поверхностный гастрит, перетяжка желчного пузыря, умеренный холестаз, аутоиммунный тиреоидит, эндометриоз, хронический бронхит, грыжи и протрузии в позвоночнике, артроз колен 2 и 3 степени. Энергии ноль, желаний ноль, внутри бардак</div>
+        <div class="ra">Полная трансформация за 2 года в школе здоровья. Сейчас 67 лет — активный образ жизни, путешествия, энергия, которой не было даже в молодости. Операция не понадобилась</div>
+        <div class="rp">Гульнара, 67 лет · 2 года в программе</div>
+      </div>
+      <div class="rc rc-thyroid">
+        <div class="rcat rcat-thyroid">Щитовидка · Давление · Инсулинорезистентность</div>
+        <div class="rb">вес постоянно возвращался, кожа рыхлая и тусклая, волосы выпадали, кожа сухая, трескались пятки, энергии ноль. Инсулинорезистентность, отрыжка и вздутие — постоянные спутники. Повышенное давление. На УЗИ — два узла в щитовидной железе, в желчном — взвесь. Папилломы на руках</div>
+        <div class="ra">за два месяца — узлы в щитовидной железе рассосались, врач снял с учёта. Ушёл лишний вес, давление нормализовалось. Волосы выросли на 4 см, проснулись новые луковицы. Кожа сияющая, вздутие и метеоризм исчезли. Папилломы исчезли сами — без косметологических вмешательств</div>
+        <div class="rp">Ольга Павлова, Талдыкорган</div>
+      </div>
+      <div class="rc rc-energy">
+        <div class="rcat rcat-energy">Энергия · Стресс · Вес · Результат за 1 год</div>
+        <div class="rb">отсутствие энергии и сил — ещё не встала, уже устала. Артрит и артроз. Хронический стресс: 2 ребёнка с диагнозом аутизм, восстановление дома после потопа, потеря близкого человека. Лишние килограммы, самочувствие на нуле. Больницы и капельницы давали лишь временное облегчение</div>
+        <div class="ra">через 2 месяца — минус 7 кг и 15 см в объёмах, ушли отёки, прошли боли в спине, больше энергии, увлажнённая кожа. Через год — минус 12 кг, снова 44 размер, боли в позвоночнике ушли, стала спокойной, уравновешенной и позитивной</div>
+        <div class="rp">Динара Калиева, Казахстан</div>
+      </div>
+      <div class="rc rc-hormones">
+        <div class="rcat rcat-hormones">Вес · Трансформация · Результат за 6 месяцев</div>
+        <div class="rb">лишний вес, низкая энергия, отсутствие понимания как работает организм. Множество безуспешных попыток похудеть через диеты и ограничения</div>
+        <div class="ra">результат комплексной работы за 6 месяцев — видимая трансформация. Прошла программу, затем обучилась на нутрициолога, сейчас помогает другим ученикам восстанавливать здоровье</div>
+        <div class="rp">Ольга, 50 лет, Астана</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<div class="sw bg-gray" id="program">
+  <div class="blob blob-blue" style="width:320px;height:320px;top:-80px;left:-80px;opacity:.35;"></div>
+  <div class="si">
+    <span class="lbl">Что вас ждёт</span>
+    <h2 class="stitle">Программа: от причины — к здоровому телу</h2>
+    <p class="sdesc">26 уроков, 3 модуля, 30 дней. Строгая логика — сначала убираем стресс, потом восстанавливаем ЖКТ, потом запускаем детокс. Именно в этом порядке.</p>
+    <div class="ptabs">
+      <button class="tbtn active" onclick="stab('pre',this)">Предобучение</button>
+      <button class="tbtn" onclick="stab('m1',this)">Модуль 1 · Стресс</button>
+      <button class="tbtn" onclick="stab('m2',this)">Модуль 2 · ЖКТ</button>
+      <button class="tbtn" onclick="stab('m3',this)">Модуль 3 · Детокс</button>
+    </div>
+    <div id="pre" class="tc active">
+      <div class="mhdr"><div class="mn">0</div><div class="mi"><h3>Предобучение</h3><p>База, без которой всё остальное работает вполовину</p></div></div>
+      <div class="ll">
+        <div class="lr"><span class="lno">01</span><span class="lt"><strong>Почему тело не восстанавливается:</strong> как связаны стресс, питание, энергия и образ жизни<span class="lt-benefit">→ Поймёте, почему «правильное питание» не давало результата</span></span></div>
+        <div class="lr"><span class="lno">02</span><span class="lt"><strong>Сон, свет и биоритмы:</strong> как восстановить базу, без которой не работают гормоны<span class="lt-benefit">→ Почему вы просыпаетесь в 3 ночи и как это исправить</span></span></div>
+        <div class="lr"><span class="lno">03</span><span class="lt"><strong>Вода, соль и баланс жидкости:</strong> как наладить гидратацию и убрать отёки<span class="lt-benefit">→ Отёки лица и ног — причина часто не в воде, а в этом</span></span></div>
+        <div class="lr"><span class="lno">04</span><span class="lt"><strong>Движение в повседневной жизни:</strong> как активность влияет на лимфу, ЖКТ и состояние<span class="lt-benefit">→ Почему «застой» в теле создаёт вздутие, отёки и тяжесть</span></span></div>
+        <div class="lr"><span class="lno">05</span><span class="lt"><strong>Базовое питание с первого дня:</strong> как начать поддерживать организм без диет<span class="lt-benefit">→ Первые результаты появляются уже на этой неделе</span></span></div>
+      </div>
+      <div class="pnt"><strong>Практика каждый день:</strong> чек-лист привычек по питанию и режиму — встраиваем основу параллельно с теорией</div>
+    </div>
+    <div id="m1" class="tc">
+      <div class="mhdr"><div class="mn">1</div><div class="mi"><h3>Стресс и нервная система</h3><p>Почему тело не слышит вас, пока вы в стрессе · дни 1–10</p></div></div>
+      <div class="ll">
+        <div class="lr"><span class="lno">01</span><span class="lt"><strong>Хронический стресс:</strong> почему не чувствуете, но он управляет вашим телом<span class="lt-benefit">→ Откуда берутся потливость, давление и тревога «на пустом месте»</span></span></div>
+        <div class="lr"><span class="lno">02</span><span class="lt"><strong>Острый стресс и выход из него:</strong> что делать прямо сейчас<span class="lt-benefit">→ Техника, которая снимает приступ тревоги за 5 минут</span></span></div>
+        <div class="lr"><span class="lno">03</span><span class="lt"><strong>Надпочечники и кортизол:</strong> как стресс создаёт лишний вес, отёки и усталость<span class="lt-benefit">→ Почему вы не можете похудеть — дело не в калориях, а в кортизоле</span></span></div>
+        <div class="lr"><span class="lno">04</span><span class="lt"><strong>Стресс и ЖКТ:</strong> почему «все болезни от нервов» — буквально правда<span class="lt-benefit">→ Как стресс вызывает вздутие, запоры и метеоризм</span></span></div>
+        <div class="lr"><span class="lno">05</span><span class="lt"><strong>Стресс и гормоны:</strong> щитовидка, эстроген, инсулин под ударом<span class="lt-benefit">→ Связь между стрессом, щитовидкой и упавшим либидо</span></span></div>
+        <div class="lr"><span class="lno">06</span><span class="lt"><strong>Мысли, тело и здоровье:</strong> как убеждения создают физические симптомы<span class="lt-benefit">→ Почему «я не могу расслабиться» — это не характер, а биохимия</span></span></div>
+        <div class="lr"><span class="lno">07</span><span class="lt"><strong>Психосоматика:</strong> тело как зеркало — читаем сигналы правильно</span></div>
+        <div class="lr"><span class="lno">+</span><span class="lt"><strong>Дыхательные практики:</strong> инструменты которые работают за 5 минут</span></div>
+      </div>
+      <div class="pnt"><strong>Практика каждый день:</strong> чек-лист дня + антистресс протокол + отслеживание состояния</div>
+    </div>
+    <div id="m2" class="tc">
+      <div class="mhdr"><div class="mn">2</div><div class="mi"><h3>Питание и пищеварение</h3><p>Как еда становится здоровьем — или не становится · дни 11–20</p></div></div>
+      <div class="ll">
+        <div class="lr"><span class="lno">08</span><span class="lt"><strong>Процесс пищеварения:</strong> от тарелки до клетки — что происходит на каждом этапе<span class="lt-benefit">→ Почему вы едите полезное — а телу от этого не легче</span></span></div>
+        <div class="lr"><span class="lno">09</span><span class="lt"><strong>Кислотность желудка:</strong> почему низкая кислотность — корень вздутия и тяжести<span class="lt-benefit">→ Главная причина метеоризма, о которой не говорят врачи</span></span></div>
+        <div class="lr"><span class="lno">10</span><span class="lt"><strong>Стресс и пищеварение:</strong> как кортизол выключает желудок и желчный<span class="lt-benefit">→ Вот почему после стресса «несёт» живот</span></span></div>
+        <div class="lr"><span class="lno">11</span><span class="lt"><strong>Ферменты:</strong> зачем нужны, когда не хватает своих и как выбрать правильные<span class="lt-benefit">→ Как убрать тяжесть после еды без таблеток «от желудка»</span></span></div>
+        <div class="lr"><span class="lno">12</span><span class="lt"><strong>Желчь:</strong> что делает, почему застаивается и как поддержать отток<span class="lt-benefit">→ Застой желчи = горечь, тошнота, проблемы с кожей</span></span></div>
+        <div class="lr"><span class="lno">13</span><span class="lt"><strong>Противовоспалительное питание:</strong> сахар, глютен, молочка — убираем лишнее<span class="lt-benefit">→ Какие продукты вызывают вздутие, отёки и высыпания</span></span></div>
+        <div class="lr"><span class="lno">14</span><span class="lt"><strong>Белки, жиры, углеводы:</strong> базовый баланс под свои симптомы<span class="lt-benefit">→ Персональный подход вместо универсальных диет</span></span></div>
+        <div class="lr"><span class="lno">15</span><span class="lt"><strong>Персональный рацион:</strong> принципы без подсчёта калорий и строгих запретов</span></div>
+        <div class="lr"><span class="lno">+</span><span class="lt"><strong>Бетаин и пепсин:</strong> что это, кому нужно и как принимать</span></div>
+      </div>
+      <div class="pnt"><strong>Практика каждый день:</strong> дневник питания и разбор своего рациона по принципам модуля</div>
+    </div>
+    <div id="m3" class="tc">
+      <div class="mhdr"><div class="mn">3</div><div class="mi"><h3>Движение, детокс, иммунитет</h3><p>Тело которое очищается и восстанавливается само · дни 21–30</p></div></div>
+      <div class="ll">
+        <div class="lr"><span class="lno">16</span><span class="lt"><strong>Биомеханика и осанка:</strong> почему неправильное движение блокирует восстановление<span class="lt-benefit">→ Как зажатая грудная клетка вызывает проблемы с давлением</span></span></div>
+        <div class="lr"><span class="lno">17</span><span class="lt"><strong>Диагностика движением:</strong> что поза и походка говорят о здоровье органов</span></div>
+        <div class="lr"><span class="lno">18</span><span class="lt"><strong>Лимфатическая система:</strong> главный дренаж организма и как его запустить<span class="lt-benefit">→ Почему не уходят отёки — и что с этим делать</span></span></div>
+        <div class="lr"><span class="lno">19</span><span class="lt"><strong>Печень:</strong> как поддержать главный орган очищения организма<span class="lt-benefit">→ Перегруженная печень = усталость, кожа, гормональные сбои</span></span></div>
+        <div class="lr"><span class="lno">20</span><span class="lt"><strong>Кишечник и очищение:</strong> почему восстановление начинается здесь<span class="lt-benefit">→ 70% иммунитета живёт в кишечнике — наладите его и перестанете болеть</span></span></div>
+        <div class="lr"><span class="lno">21</span><span class="lt"><strong>Умное движение:</strong> суставы, позвоночник, внутренние органы</span></div>
+        <div class="lr"><span class="lno">22</span><span class="lt"><strong>Иммунитет:</strong> как стресс, питание и очищение связаны в одну систему</span></div>
+        <div class="lr"><span class="lno">23</span><span class="lt"><strong>Твоя система здоровья:</strong> собираем всё вместе и выстраиваем жизнь после курса<span class="lt-benefit">→ Чёткий план: что делать после программы, чтобы не откатиться</span></span></div>
+      </div>
+      <div class="pnt"><strong>Практика каждый день:</strong> протокол движения и восстановления — минимум 10 минут в день</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORMAT -->
+<div class="sw"><div class="si">
+  <span class="lbl">Как устроена программа</span>
+  <h2 class="stitle">Формат, который даёт результат</h2>
+  <div class="fgrid">
+    <div class="fcard"><div class="fic">🎬</div><div class="ft">Уроки в записи</div><div class="fd">Смотрите когда удобно, возвращайтесь к нужным урокам сколько угодно</div></div>
+    <div class="fcard"><div class="fic">💬</div><div class="ft">Чат с кураторами</div><div class="fd">Поддержка, ответы на вопросы, разбор вашей ситуации каждый день</div></div>
+    <div class="fcard"><div class="fic">📋</div><div class="ft">Ежедневные практики</div><div class="fd">Чек-листы и протоколы — конкретные действия которые встраиваются в жизнь</div></div>
+    <div class="fcard"><div class="fic">📊</div><div class="ft">Ежедневные отчёты</div><div class="fd">Отслеживаете своё состояние и видите как оно меняется день за днём</div></div>
+  </div>
+</div></div>
+
+<!-- BONUSES -->
+<div class="sw bg-pale"><div class="si">
+  <span class="lbl">Подарки к программе</span>
+  <h2 class="stitle">Бонусы включены в стоимость</h2>
+  <div class="bgrid">
+    <div class="bcard"><div class="btag">Интенсив</div><div class="btit">Про женское тело</div><div class="bdesc">Движение, осанка, тазовое дно, биомеханика — убираем блоки, которые мешают восстановлению</div></div>
+    <div class="bcard"><div class="btag">Справочник</div><div class="btit">Аптечка нутрициолога</div><div class="bdesc">Какие БАДы работают, как выбирать, как не навредить — без лишних трат</div></div>
+    <div class="bcard"><div class="btag">Приложение</div><div class="btit">Тренировки на 1 месяц</div><div class="bdesc">Доступ к приложению с тренировками, подобранными под программу восстановления</div></div>
+    <div class="bcard"><div class="btag">Мини-курс</div><div class="btit">Железо, ферритин и энергия</div><div class="bdesc">Как понять что у вас дефицит и почему он блокирует и похудение, и энергию, и либидо</div></div>
+    <div class="bcard"><div class="btag">Мини-курс</div><div class="btit">Женское здоровье: цикл и ПМС</div><div class="bdesc">Как гормональные колебания влияют на вес, настроение и самочувствие</div></div>
+    <div class="bcard"><div class="btag">Протокол</div><div class="btit">Восстановление после срывов</div><div class="bdesc">Пошаговый план без чувства вины — после отпуска, праздников, откатов</div></div>
+  </div>
+</div></div>
+
+<!-- ABOUT -->
+<div class="sw bg-pale" id="about">
+  <div class="blob blob-blue" style="width:440px;height:440px;right:-140px;top:-100px;opacity:.22;"></div>
+  <div class="blob blob-pink" style="width:280px;height:280px;left:-70px;bottom:-60px;opacity:.22;"></div>
+  <div class="si">
+    <div class="agrid">
+      <div>
+        <div class="aph">
+          <!-- Заменить на фото: <img src="marina.jpg" alt="Марина Жигульская"> -->
+          <div class="aph-pl">М</div>
+          <div class="anb"><span class="al">Автор программы</span><span class="an">МАРИНА ЖИГУЛЬСКАЯ</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="atag">ОБО МНЕ</div>
+        <h2 class="aname">Марина Жигульская</h2>
+        <div class="arole">Нутрициолог / натуропат · Академия натуропатии «Система здоровья»</div>
+        <p class="atxt">Я создала эту программу потому что сама прошла путь от «всё в норме по анализам» до понимания того, как на самом деле работает тело. У меня были те же симптомы — усталость, проблемы с ЖКТ, гормональные сбои. Врачи разводили руками.</p>
+        <p class="atxt">Когда я разобралась в причинах — симптомы ушли сами. И помогла пройти этот путь <strong>тысячам женщин</strong> — без жёстких диет, без дорогих процедур, без бесконечных визитов к врачам.</p>
+        <p class="atxt">Мой подход: <strong>«Как нас придумала природа»</strong> — восстанавливаем то, что заложено природой, убирая то, что мешает. Не лечим симптомы — устраняем причины.</p>
+        <ul class="alist">
+          <li><strong>54 года</strong> — живое доказательство подхода</li>
+          <li>Нутрициолог / натуропат с опытом <strong>более 7 лет</strong></li>
+          <li>Основатель Академии натуропатии <strong>«Система здоровья»</strong></li>
+          <li>Более <strong>6 000 учеников</strong> из 35+ стран</li>
+          <li>Обучение в <strong>CNM</strong> (College of Naturopathic Medicine, London)</li>
+          <li>Основатель и лидер команды нутрициологов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COST COMPARISON + PRICING -->
+
+<!-- SPEAKERS -->
+<div class="sw"><div class="si">
+  <span class="lbl">Команда</span>
+  <h2 class="stitle">Другие спикеры программы</h2>
+  <p class="sdesc">Каждый спикер — практикующий специалист с реальным опытом восстановления здоровья.</p>
+  <div class="spk-grid">
+    <div class="spk-card">
+      <div class="spk-photo">
+        <!-- Заменить на фото: <img src="alena.jpg" alt="Алёна Коблякова"> -->
+        <div class="spk-photo-pl">А</div>
+      </div>
+      <div class="spk-name">Алёна Коблякова</div>
+      <div class="spk-role">Нутрициолог · Методолог образовательных программ</div>
+      <ul class="spk-list">
+        <li>Практикующий нутрициолог</li>
+        <li>Опыт работы более 4 лет</li>
+        <li>Методолог образовательных программ</li>
+      </ul>
+    </div>
+    <div class="spk-card">
+      <div class="spk-photo">
+        <!-- Заменить на фото: <img src="valeria.jpg" alt="Валерия Пивторак"> -->
+        <div class="spk-photo-pl">В</div>
+      </div>
+      <div class="spk-name">Валерия Пивторак</div>
+      <div class="spk-role">Биохимик · Нутрициолог · Фитнес-тренер</div>
+      <ul class="spk-list">
+        <li>Биохимик и нутрициолог</li>
+        <li>Фитнес-тренер с опытом 10 лет</li>
+        <li>Специалист по АФК и женскому здоровью</li>
+      </ul>
+    </div>
+    <div class="spk-card">
+      <div class="spk-photo">
+        <!-- Заменить на фото: <img src="natalia.jpg" alt="Наталья Фисенко"> -->
+        <div class="spk-photo-pl">Н</div>
+      </div>
+      <div class="spk-name">Наталья Фисенко</div>
+      <div class="spk-role">Фитнес-тренер · Кинезиотерапевт</div>
+      <ul class="spk-list">
+        <li>Фитнес-тренер и спортивный реабилитолог</li>
+        <li>Кинезиотерапевт</li>
+        <li>Специалист по послеродовому восстановлению и женскому здоровью</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+<!-- COST COMPARISON + PRICING -->
+<div class="sw" id="pricing"><div class="si">
+  <span class="lbl">Стоимость</span>
+  <h2 class="stitle">Сколько стоит ничего не менять?</h2>
+  <p class="sdesc">Прежде чем смотреть на цену — посчитайте, сколько вы уже потратили на попытки разобраться самостоятельно.</p>
+
+  <div class="cost-grid">
+    <div class="cost-card cost-old">
+      <h4>❌ Путь «по кругу»</h4>
+      <div class="cost-item"><span>Визиты к 3–4 врачам</span><span class="ci-price">50 000+ ₸</span></div>
+      <div class="cost-item"><span>Анализы, которые «в норме»</span><span class="ci-price">30 000+ ₸</span></div>
+      <div class="cost-item"><span>БАДы наугад (3–6 мес)</span><span class="ci-price">60 000+ ₸</span></div>
+      <div class="cost-item"><span>Диетолог / нутрициолог разово</span><span class="ci-price">25 000+ ₸</span></div>
+      <div class="cost-item"><span>Потерянная энергия и отношения</span><span class="ci-price">∞</span></div>
+      <div class="cost-total"><span>Итого за год</span><span>165 000+ ₸</span></div>
+    </div>
+    <div class="cost-card cost-new">
+      <h4>✅ Программа «Сам себе нутрициолог»</h4>
+      <div class="cost-item"><span>Системное понимание тела</span><span class="ci-price">✓</span></div>
+      <div class="cost-item"><span>Работа с причиной, не симптомами</span><span class="ci-price">✓</span></div>
+      <div class="cost-item"><span>Поддержка куратора 30 дней</span><span class="ci-price">✓</span></div>
+      <div class="cost-item"><span>6 бонусных модулей</span><span class="ci-price">✓</span></div>
+      <div class="cost-item"><span>Знания на всю жизнь</span><span class="ci-price">✓</span></div>
+      <div class="cost-total"><span>Стоимость</span><span><span style="text-decoration:line-through;color:var(--text-muted);font-size:13px;font-weight:500;">378 000 ₸</span>&nbsp; 189 000 ₸</span></div>
+    </div>
+  </div>
+
+  <h3 class="stitle" style="font-size:clamp(22px,3vw,34px);margin-top:16px;">Выберите свой формат</h3>
+  <div class="pcgrid">
+    <div class="pcrd">
+      <div class="plbl">Самостоятельный</div>
+      <div class="pdisc">−50%</div>
+      <div class="pamt-old">298 000 ₸</div>
+      <div class="pamt">149 000 ₸</div>
+      <div class="pcur">23 990 ₽ · $319</div>
+      <ul class="pfl">
+        <li>26 уроков в записи</li>
+        <li>Все практические материалы и чек-листы</li>
+        <li>Доступ к чату участников</li>
+        <li>Все 6 бонусных модулей</li>
+        <li>Доступ 5 месяцев</li>
+      </ul>
+      <a href="#" class="btn btn-blue btn-full">Выбрать тариф</a>
+    </div>
+    <div class="pcrd feat">
+      <div class="pfbadge">⭐ Рекомендуем</div>
+      <div class="plbl">С поддержкой кураторов</div>
+      <div class="pdisc">−50%</div>
+      <div class="pamt-old">378 000 ₸</div>
+      <div class="pamt">189 000 ₸</div>
+      <div class="pcur">29 990 ₽ · $399</div>
+      <ul class="pfl">
+        <li>26 уроков в записи</li>
+        <li>Все практические материалы и чек-листы</li>
+        <li>Поддержка куратора-нутрициолога каждый день</li>
+        <li>Разбор вашей ситуации и симптомов</li>
+        <li>Ежедневные отчёты с обратной связью</li>
+        <li>Все 6 бонусных модулей</li>
+        <li>Доступ 5 месяцев</li>
+      </ul>
+      <a href="#" class="btn btn-gold btn-full">Записаться сейчас</a>
+    </div>
+  </div>
+</div></div>
+
+<!-- FAQ -->
+<div class="sw bg-pale"><div class="si">
+  <span class="lbl">Вопросы и ответы</span>
+  <h2 class="stitle">Часто спрашивают</h2>
+  <div class="faq">
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Вы лечите конкретные диагнозы — щитовидку, ЖКТ, давление? <span class="ftog">+</span></div><div class="fa">Нет, мы не лечим диагнозы и не заменяем врача. Мы делаем другое: устраняем причины, из-за которых организм даёт сбой — хронический стресс, нарушенное пищеварение, токсическую нагрузку. Когда причины уходят — симптомы уходят вместе с ними. Именно поэтому у наших учениц одновременно улучшаются такие разные показатели: от вздутия до давления, от отёков до либидо. Мы работаем широким фронтом, а не точечно.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Почему программа помогает от таких разных проблем? <span class="ftog">+</span></div><div class="fa">Потому что у этих проблем — общий корень. Хронический стресс нарушает работу надпочечников, те бьют по гормонам (щитовидка, половые гормоны, инсулин), параллельно страдает ЖКТ, накапливаются токсины — и организм начинает «сыпаться» в разных местах. Мы восстанавливаем всю цепочку — и симптомы уходят сами, потому что причина устранена.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Нужно ли быть онлайн в определённое время? <span class="ftog">+</span></div><div class="fa">Нет. Все уроки записаны — смотрите когда удобно. Доступ открыт 5 месяцев. Чат с куратором работает асинхронно — пишете вопрос, получаете ответ в течение дня.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Подойдёт ли если у меня есть хронические диагнозы? <span class="ftog">+</span></div><div class="fa">Программа даёт понимание как работает организм и какие факторы образа жизни влияют на здоровье. Большинство участниц с хроническими состояниями замечают значительное улучшение самочувствия — потому что мы работаем с причинами, а не маскируем симптомы. При серьёзных диагнозах рекомендуем сначала проконсультироваться с лечащим врачом.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Нужно ли покупать дорогие БАДы? <span class="ftog">+</span></div><div class="fa">Нет. Программа строится на изменении образа жизни и питания — это основа. БАДы обсуждаются как дополнение, но они не обязательны. Один из бонусов — «Аптечка нутрициолога» — поможет выбрать только то, что действительно нужно, без лишних трат.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Когда появятся первые результаты? <span class="ftog">+</span></div><div class="fa">Большинство участниц замечают первые изменения к концу первой недели — улучшается сон, уменьшается тяжесть в животе, появляется энергия с утра. Вздутие и отёки обычно начинают уходить на 2-й неделе. Более глубокие изменения (давление, гормоны, кожа) — к концу программы и после.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Что если я обычно не дохожу до конца курсов? <span class="ftog">+</span></div><div class="fa">Именно поэтому в программе есть ежедневные практики — это не «посмотри урок», а конкретное действие каждый день. Кураторы видят ваши отчёты и поддерживают. Короткие уроки + конкретные задания + поддержка — та комбинация, которая помогает дойти до конца.</div></div>
+  </div>
+</div></div>
+
+<!-- FINAL CTA -->
+<div class="sw bg-navy" style="text-align:center;">
+  <div class="blob blob-blue" style="width:360px;height:360px;left:-90px;top:-90px;opacity:.1;"></div>
+  <div class="blob blob-gold" style="width:260px;height:260px;right:-70px;bottom:-70px;opacity:.07;"></div>
+  <svg class="mol" style="left:40px;bottom:40px;width:180px;height:180px;opacity:.12;" viewBox="0 0 180 180" fill="none">
+    <circle cx="90" cy="90" r="28" fill="white"/><circle cx="50" cy="64" r="16" fill="white" opacity=".6"/>
+    <circle cx="136" cy="58" r="12" fill="white" opacity=".5"/><circle cx="140" cy="126" r="10" fill="white" opacity=".4"/>
+    <line x1="90" y1="90" x2="50" y2="64" stroke="white" stroke-width="1.5"/>
+    <line x1="90" y1="90" x2="136" y2="58" stroke="white" stroke-width="1.5"/>
+    <line x1="90" y1="90" x2="140" y2="126" stroke="white" stroke-width="1.5"/>
+  </svg>
+  <div class="si" style="max-width:700px;margin:0 auto;">
+    <h2 class="ftitle">Перестаньте лечить симптомы.<br><span>Уберите причину.</span></h2>
+    <p class="fsub">30 дней — и вы будете понимать своё тело лучше, чем за все предыдущие годы. Вздутие, отёки, давление, усталость — уходят, когда организм восстановлен. Без жёстких диет. Без бесконечных анализов.</p>
+    <a href="#" class="btn btn-gold" style="padding:18px 48px;font-size:15px;">Записаться на программу</a>
+    <div class="fpn"><span style="text-decoration:line-through;opacity:.5;">378 000 ₸</span>&nbsp;&nbsp;<strong style="color:var(--gold-light);">189 000 ₸</strong> · 29 990 ₽ · $399 · Скидка 50% · Доступ 5 месяцев</div>
+  </div>
+</div>
+
+<footer>
+  <div class="fbrnd">Академия натуропатии<br><span>«Система здоровья»</span></div>
+  <div class="fnote">Программа «Сам себе нутрициолог» не является медицинским препаратом и не заменяет консультацию врача</div>
+</footer>
+
+<script>
+function stab(id,btn){document.querySelectorAll('.tc').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.tbtn').forEach(e=>e.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active')}
+function tfaq(el){const i=el.parentElement,o=i.classList.contains('open');document.querySelectorAll('.fi').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+</script>
+</body>
+</html>

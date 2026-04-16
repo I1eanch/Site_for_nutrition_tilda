@@ -1,0 +1,101 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Сам себе нутрициолог — Академия натуропатии «Система здоровья»',
+  description = 'За 30 дней вы поймёте, почему организм даёт сбой, и запустите восстановление через работу со стрессом, ЖКТ и детоксикацией.',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <slot />
+
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Scroll-reveal with blur effect
+    const rvEls = gsap.utils.toArray<HTMLElement>('.rv');
+    // Immediately hide — GSAP set() runs synchronously, no flash
+    gsap.set(rvEls, { opacity: 0, y: 24 });
+    rvEls.forEach((el) => {
+      gsap.to(el, {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+        },
+      });
+    });
+
+    // Stagger for grids with blur
+    document.querySelectorAll<HTMLElement>('.stagger-grid').forEach((grid) => {
+      const children = Array.from(grid.children) as HTMLElement[];
+      gsap.set(children, { opacity: 0, y: 20 });
+      gsap.to(children, {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: grid,
+          start: 'top 85%',
+          once: true,
+        },
+      });
+    });
+
+    // Counter animation for stats
+    document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+      const target = parseInt(el.dataset.count || '0', 10);
+      const obj = { val: 0 };
+      let last = -1;
+      gsap.to(obj, {
+        val: target,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+        },
+        onUpdate: () => {
+          const v = Math.round(obj.val);
+          if (v !== last) {
+            el.textContent = v.toLocaleString('ru-RU');
+            last = v;
+          }
+        },
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

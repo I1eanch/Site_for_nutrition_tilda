@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import SectionLabel from './ui/SectionLabel.astro';
+import alenaPhoto from '../assets/alena.jpg';
+import valeriaPhoto from '../assets/valeria.jpg';
+import nataliaPhoto from '../assets/natalia.jpg';
+
+const speakers = [
+  {
+    photo: alenaPhoto,
+    name: 'Алёна Коблякова',
+    role: 'Нутрициолог · Методолог образовательных программ',
+    points: ['Практикующий нутрициолог', 'Опыт работы более 4 лет', 'Методолог образовательных программ'],
+  },
+  {
+    photo: valeriaPhoto,
+    name: 'Валерия Пивторак',
+    role: 'Биохимик · Нутрициолог · Фитнес-тренер',
+    points: ['Биохимик и нутрициолог', 'Фитнес-тренер с опытом 10 лет', 'Специалист по АФК и женскому здоровью'],
+  },
+  {
+    photo: nataliaPhoto,
+    name: 'Наталья Фисенко',
+    role: 'Фитнес-тренер · Кинезиотерапевт',
+    points: ['Фитнес-тренер и спортивный реабилитолог', 'Кинезиотерапевт', 'Специалист по послеродовому восстановлению и женскому здоровью'],
+  },
+];
+---
+
+<section class="relative overflow-hidden">
+  <div class="max-w-[1100px] mx-auto px-12 py-12 max-md:px-5 max-md:py-8">
+    <SectionLabel>Команда</SectionLabel>
+    <h2 class="rv text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-tight mb-3.5 tracking-[--tracking-section]">
+      Другие спикеры программы
+    </h2>
+    <p class="rv text-[15px] text-gray-700 leading-relaxed max-w-[620px]">
+      Каждый спикер — практикующий специалист с реальным опытом восстановления здоровья.
+    </p>
+
+    <div class="stagger-grid grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      {speakers.map(s => (
+        <div class="bg-white border border-border rounded-[20px] p-7 text-center transition-colors duration-200 hover:border-border-md">
+          <div class="w-[130px] h-[130px] rounded-full mx-auto mb-4.5 overflow-hidden border-[3px] border-brand-light">
+            <Image
+              src={s.photo}
+              alt={s.name}
+              class="w-full h-full object-cover"
+              width={130}
+              height={130}
+            />
+          </div>
+          <div class="text-base font-extrabold text-primary mb-1.5">{s.name}</div>
+          <div class="text-xs text-brand font-semibold mb-3.5">{s.role}</div>
+          <ul class="list-none flex flex-col gap-1.5 text-left">
+            {s.points.map(p => (
+              <li class="flex gap-2 text-xs text-gray-700 items-start leading-snug">
+                <span class="w-[5px] h-[5px] min-w-[5px] bg-brand rounded-full mt-1.5"></span>
+                {p}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

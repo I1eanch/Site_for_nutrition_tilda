@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  /* === Colors === */
+  --color-primary: #0d0d0d;
+  --color-white: #ffffff;
+  --color-brand: #18E299;
+  --color-brand-light: #d4fae8;
+  --color-brand-deep: #0fa76e;
+
+  /* Neutral scale */
+  --color-gray-900: #0d0d0d;
+  --color-gray-700: #333333;
+  --color-gray-500: #666666;
+  --color-gray-400: #888888;
+  --color-gray-200: #e5e5e5;
+  --color-gray-100: #f5f5f5;
+  --color-gray-50: #fafafa;
+
+  /* Status */
+  --color-red-soft: #d45656;
+  --color-green-soft: #18E299;
+
+  /* Borders */
+  --color-border: rgba(0,0,0,0.08);
+  --color-border-md: rgba(0,0,0,0.14);
+
+  /* === Fonts === */
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, SFMono-Regular, monospace;
+
+  /* === Shadows === */
+  --shadow-card: 0px 2px 8px rgba(0,0,0,0.06), 0px 1px 2px rgba(0,0,0,0.04);
+  --shadow-btn: 0px 1px 3px rgba(0,0,0,0.08);
+
+  /* === Letter spacing === */
+  --tracking-display: -1.28px;
+  --tracking-section: -0.8px;
+  --tracking-subhead: -0.24px;
+  --tracking-mono: 0.6px;
+  --tracking-label: 0.65px;
+}
+
+/* === Base === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-white);
+  color: var(--color-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Scroll reveal — .rv is a GSAP selector only, no initial styles === */
+/* GSAP from() handles opacity:0 → 1 animation internally */
+
+/* === Hero breathing gradient === */
+@keyframes breathe {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.12; }
+}
+
+.hero-glow {
+  animation: breathe 8s ease-in-out infinite;
+}
+
+/* === FAQ smooth accordion === */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.faq-answer > * {
+  overflow: hidden;
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-item.open .faq-toggle {
+  background: var(--color-brand);
+  color: var(--color-primary);
+  transform: rotate(45deg);
+}
+
+
+/* === Tab content === */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}

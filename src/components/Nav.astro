@@ -1,0 +1,52 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-sm border-b border-border h-16 flex items-center justify-between px-12 max-md:px-5">
+  <div class="text-[13px] font-bold text-primary leading-tight">
+    Академия натуропатии<br /><span class="text-brand">«Система здоровья»</span>
+  </div>
+
+  <ul class="hidden md:flex items-center gap-7 list-none">
+    <li><a href="#symptoms" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Симптомы</a></li>
+    <li><a href="#program" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Программа</a></li>
+    <li><a href="#about" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Об авторе</a></li>
+    <li><a href="#pricing" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Стоимость</a></li>
+    <li>
+      <Button variant="primary" href="#pricing" class="py-2! px-5! text-[13px]! font-bold!">Записаться</Button>
+    </li>
+  </ul>
+
+  <!-- Mobile hamburger -->
+  <button class="md:hidden flex flex-col gap-1.5 p-2" id="mobile-menu-btn" aria-label="Меню">
+    <span class="block w-5 h-0.5 bg-primary transition-transform duration-200"></span>
+    <span class="block w-5 h-0.5 bg-primary transition-opacity duration-200"></span>
+    <span class="block w-5 h-0.5 bg-primary transition-transform duration-200"></span>
+  </button>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white pt-20 px-6 hidden flex-col gap-6">
+  <a href="#symptoms" class="text-lg text-primary font-medium no-underline mobile-link">Симптомы</a>
+  <a href="#program" class="text-lg text-primary font-medium no-underline mobile-link">Программа</a>
+  <a href="#about" class="text-lg text-primary font-medium no-underline mobile-link">Об авторе</a>
+  <a href="#pricing" class="text-lg text-primary font-medium no-underline mobile-link">Стоимость</a>
+  <Button variant="brand" href="#pricing" fullWidth class="mt-4">Записаться на программу</Button>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+    mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
+  }
+</script>

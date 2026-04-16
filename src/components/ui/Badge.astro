@@ -1,0 +1,19 @@
+---
+interface Props {
+  variant?: 'brand' | 'dark' | 'red' | 'muted';
+  class?: string;
+}
+
+const { variant = 'brand', class: className = '' } = Astro.props;
+
+const variants: Record<string, string> = {
+  brand: 'bg-brand-light text-brand-deep',
+  dark: 'bg-primary text-white',
+  red: 'bg-red-soft text-white',
+  muted: 'border border-border-md bg-transparent text-primary',
+};
+---
+
+<span class={`inline-block text-[10px] font-semibold tracking-[0.12em] uppercase px-2.5 py-0.5 rounded-full ${variants[variant]} ${className}`}>
+  <slot />
+</span>

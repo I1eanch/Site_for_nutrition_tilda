@@ -1,0 +1,211 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+---
+
+<section class="relative overflow-hidden" id="program">
+  <div class="max-w-[1100px] mx-auto px-12 py-12 relative z-10 max-md:px-5 max-md:py-8">
+    <SectionLabel>Что вас ждёт</SectionLabel>
+    <h2 class="rv text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-tight mb-3.5 tracking-[--tracking-section]">
+      Программа: от причины — к здоровому телу
+    </h2>
+    <p class="rv text-[15px] text-gray-700 leading-relaxed max-w-[620px]">
+      26 уроков, 3 модуля, 30 дней. Строгая логика — сначала убираем стресс, потом восстанавливаем ЖКТ, потом запускаем детокс. Именно в этом порядке.
+    </p>
+
+    <!-- Tabs -->
+    <div class="rv flex gap-1 mt-7 mb-6 bg-gray-100 border border-border p-1 rounded-full w-fit max-md:flex-wrap max-md:w-full">
+      <button class="tab-btn px-5.5 py-2.5 border-none bg-primary text-white rounded-full font-sans text-[13px] font-bold cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="pre">Предобучение</button>
+      <button class="tab-btn px-5.5 py-2.5 border-none bg-transparent text-gray-400 rounded-full font-sans text-[13px] font-medium cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="m1">Модуль 1 · Стресс</button>
+      <button class="tab-btn px-5.5 py-2.5 border-none bg-transparent text-gray-400 rounded-full font-sans text-[13px] font-medium cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="m2">Модуль 2 · ЖКТ</button>
+      <button class="tab-btn px-5.5 py-2.5 border-none bg-transparent text-gray-400 rounded-full font-sans text-[13px] font-medium cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="m3">Модуль 3 · Детокс</button>
+    </div>
+
+    <!-- Tab: Предобучение -->
+    <div id="pre" class="tab-content active">
+      <div class="flex gap-4.5 items-start mb-6 pb-5 border-b-2 border-gray-200">
+        <div class="text-[52px] font-extrabold text-brand/30 leading-none shrink-0">0</div>
+        <div><h3 class="text-[21px] font-extrabold text-primary mb-1">Предобучение</h3><p class="text-xs text-gray-400 italic">База, без которой всё остальное работает вполовину</p></div>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">01</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Почему тело не восстанавливается:</strong> как связаны стресс, питание, энергия и образ жизни<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Поймёте, почему «правильное питание» не давало результата</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">02</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Сон, свет и биоритмы:</strong> как восстановить базу, без которой не работают гормоны<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Почему вы просыпаетесь в 3 ночи и как это исправить</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">03</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Вода, соль и баланс жидкости:</strong> как наладить гидратацию и убрать отёки<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Отёки лица и ног — причина часто не в воде, а в этом</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">04</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Движение в повседневной жизни:</strong> как активность влияет на лимфу, ЖКТ и состояние<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Почему «застой» в теле создаёт вздутие, отёки и тяжесть</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">05</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Базовое питание с первого дня:</strong> как начать поддерживать организм без диет<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Первые результаты появляются уже на этой неделе</span></span>
+        </div>
+      </div>
+      <div class="bg-brand-light border-l-[3px] border-brand py-3.5 px-4 mt-4.5 rounded-r-[10px] text-xs text-gray-700 leading-relaxed">
+        <strong class="text-brand font-bold">Практика каждый день:</strong> чек-лист привычек по питанию и режиму — встраиваем основу параллельно с теорией
+      </div>
+    </div>
+
+    <!-- Tab: Модуль 1 -->
+    <div id="m1" class="tab-content">
+      <div class="flex gap-4.5 items-start mb-6 pb-5 border-b-2 border-gray-200">
+        <div class="text-[52px] font-extrabold text-brand/30 leading-none shrink-0">1</div>
+        <div><h3 class="text-[21px] font-extrabold text-primary mb-1">Стресс и нервная система</h3><p class="text-xs text-gray-400 italic">Почему тело не слышит вас, пока вы в стрессе · дни 1–10</p></div>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">01</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Хронический стресс:</strong> почему не чувствуете, но он управляет вашим телом<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Откуда берутся потливость, давление и тревога «на пустом месте»</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">02</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Острый стресс и выход из него:</strong> что делать прямо сейчас<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Техника, которая снимает приступ тревоги за 5 минут</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">03</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Надпочечники и кортизол:</strong> как стресс создаёт лишний вес, отёки и усталость<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Почему вы не можете похудеть — дело не в калориях, а в кортизоле</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">04</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Стресс и ЖКТ:</strong> почему «все болезни от нервов» — буквально правда<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Как стресс вызывает вздутие, запоры и метеоризм</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">05</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Стресс и гормоны:</strong> щитовидка, эстроген, инсулин под ударом<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Связь между стрессом, щитовидкой и упавшим либидо</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">06</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Мысли, тело и здоровье:</strong> как убеждения создают физические симптомы<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Почему «я не могу расслабиться» — это не характер, а биохимия</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">07</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Психосоматика:</strong> тело как зеркало — читаем сигналы правильно</span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">+</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Дыхательные практики:</strong> инструменты которые работают за 5 минут</span>
+        </div>
+      </div>
+      <div class="bg-brand-light border-l-[3px] border-brand py-3.5 px-4 mt-4.5 rounded-r-[10px] text-xs text-gray-700 leading-relaxed">
+        <strong class="text-brand font-bold">Практика каждый день:</strong> чек-лист дня + антистресс протокол + отслеживание состояния
+      </div>
+    </div>
+
+    <!-- Tab: Модуль 2 -->
+    <div id="m2" class="tab-content">
+      <div class="flex gap-4.5 items-start mb-6 pb-5 border-b-2 border-gray-200">
+        <div class="text-[52px] font-extrabold text-brand/30 leading-none shrink-0">2</div>
+        <div><h3 class="text-[21px] font-extrabold text-primary mb-1">Питание и пищеварение</h3><p class="text-xs text-gray-400 italic">Как еда становится здоровьем — или не становится · дни 11–20</p></div>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">08</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Процесс пищеварения:</strong> от тарелки до клетки — что происходит на каждом этапе<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Почему вы едите полезное — а телу от этого не легче</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">09</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Кислотность желудка:</strong> почему низкая кислотность — корень вздутия и тяжести<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Главная причина метеоризма, о которой не говорят врачи</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">10</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Стресс и пищеварение:</strong> как кортизол выключает желудок и желчный<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Вот почему после стресса «несёт» живот</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">11</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Ферменты:</strong> зачем нужны, когда не хватает своих и как выбрать правильные<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Как убрать тяжесть после еды без таблеток «от желудка»</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">12</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Желчь:</strong> что делает, почему застаивается и как поддержать отток<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Застой желчи = горечь, тошнота, проблемы с кожей</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">13</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Противовоспалительное питание:</strong> сахар, глютен, молочка — убираем лишнее<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Какие продукты вызывают вздутие, отёки и высыпания</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">14</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Белки, жиры, углеводы:</strong> базовый баланс под свои симптомы<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Персональный подход вместо универсальных диет</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">15</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Персональный рацион:</strong> принципы без подсчёта калорий и строгих запретов</span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">+</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Бетаин и пепсин:</strong> что это, кому нужно и как принимать</span>
+        </div>
+      </div>
+      <div class="bg-brand-light border-l-[3px] border-brand py-3.5 px-4 mt-4.5 rounded-r-[10px] text-xs text-gray-700 leading-relaxed">
+        <strong class="text-brand font-bold">Практика каждый день:</strong> дневник питания и разбор своего рациона по принципам модуля
+      </div>
+    </div>
+
+    <!-- Tab: Модуль 3 -->
+    <div id="m3" class="tab-content">
+      <div class="flex gap-4.5 items-start mb-6 pb-5 border-b-2 border-gray-200">
+        <div class="text-[52px] font-extrabold text-brand/30 leading-none shrink-0">3</div>
+        <div><h3 class="text-[21px] font-extrabold text-primary mb-1">Движение, детокс, иммунитет</h3><p class="text-xs text-gray-400 italic">Тело которое очищается и восстанавливается само · дни 21–30</p></div>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">16</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Биомеханика и осанка:</strong> почему неправильное движение блокирует восстановление<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Как зажатая грудная клетка вызывает проблемы с давлением</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">17</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Диагностика движением:</strong> что поза и походка говорят о здоровье органов</span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">18</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Лимфатическая система:</strong> главный дренаж организма и как его запустить<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Почему не уходят отёки — и что с этим делать</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">19</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Печень:</strong> как поддержать главный орган очищения организма<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Перегруженная печень = усталость, кожа, гормональные сбои</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">20</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Кишечник и очищение:</strong> почему восстановление начинается здесь<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ 70% иммунитета живёт в кишечнике — наладите его и перестанете болеть</span></span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">21</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Умное движение:</strong> суставы, позвоночник, внутренние органы</span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 border-b border-border items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">22</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Иммунитет:</strong> как стресс, питание и очищение связаны в одну систему</span>
+        </div>
+        <div class="flex gap-3.5 py-3.5 items-start">
+          <span class="font-mono text-[11px] font-bold text-brand min-w-6.5 pt-0.5">23</span>
+          <span class="text-[13px] text-gray-700 leading-relaxed"><strong class="text-primary font-bold">Твоя система здоровья:</strong> собираем всё вместе и выстраиваем жизнь после курса<span class="block text-[11px] text-brand font-medium mt-0.5 italic">→ Чёткий план: что делать после программы, чтобы не откатиться</span></span>
+        </div>
+      </div>
+      <div class="bg-brand-light border-l-[3px] border-brand py-3.5 px-4 mt-4.5 rounded-r-[10px] text-xs text-gray-700 leading-relaxed">
+        <strong class="text-brand font-bold">Практика каждый день:</strong> протокол движения и восстановления — минимум 10 минут в день
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab!;
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-white', 'font-bold');
+        b.classList.add('bg-transparent', 'text-gray-400', 'font-medium');
+      });
+      btn.classList.remove('bg-transparent', 'text-gray-400', 'font-medium');
+      btn.classList.add('bg-primary', 'text-white', 'font-bold');
+      document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+      document.getElementById(target)?.classList.add('active');
+    });
+  });
+</script>

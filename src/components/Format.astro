@@ -1,0 +1,29 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+
+const items = [
+  { icon: '🎬', title: 'Уроки в записи', desc: 'Смотрите когда удобно, возвращайтесь к нужным урокам сколько угодно' },
+  { icon: '💬', title: 'Чат с кураторами', desc: 'Поддержка, ответы на вопросы, разбор вашей ситуации каждый день' },
+  { icon: '📋', title: 'Ежедневные практики', desc: 'Чек-листы и протоколы — конкретные действия которые встраиваются в жизнь' },
+  { icon: '📊', title: 'Ежедневные отчёты', desc: 'Отслеживаете своё состояние и видите как оно меняется день за днём' },
+];
+---
+
+<section class="relative overflow-hidden">
+  <div class="max-w-[1100px] mx-auto px-12 py-12 max-md:px-5 max-md:py-8">
+    <SectionLabel>Как устроена программа</SectionLabel>
+    <h2 class="rv text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-tight mb-3.5 tracking-[--tracking-section]">
+      Формат, который даёт результат
+    </h2>
+
+    <div class="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-6">
+      {items.map(item => (
+        <div class="bg-white border border-border rounded-[18px] p-6.5 text-center transition-colors duration-200 hover:border-border-md">
+          <div class="w-13 h-13 rounded-full bg-brand-light flex items-center justify-center text-[22px] mx-auto mb-3.5">{item.icon}</div>
+          <div class="text-[13px] font-bold text-primary mb-1.5">{item.title}</div>
+          <div class="text-xs text-gray-400 leading-relaxed">{item.desc}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+interface Props {
+  variant?: 'primary' | 'brand' | 'outline' | 'ghost';
+  href?: string;
+  fullWidth?: boolean;
+  class?: string;
+}
+
+const {
+  variant = 'primary',
+  href,
+  fullWidth = false,
+  class: className = '',
+} = Astro.props;
+
+const base = 'inline-block text-center font-sans font-medium text-[15px] rounded-full cursor-pointer transition-[color,background-color,border-color,opacity] duration-200 no-underline';
+
+const variants: Record<string, string> = {
+  primary: 'bg-primary text-white px-8 py-3.5 shadow-btn hover:opacity-90',
+  brand: 'bg-brand text-primary px-8 py-3.5 shadow-btn hover:opacity-90',
+  outline: 'border border-border-md bg-transparent text-primary px-8 py-3.5 hover:bg-brand hover:border-brand',
+  ghost: 'bg-transparent text-primary px-3 py-1.5 hover:bg-gray-100',
+};
+
+const width = fullWidth ? 'w-full' : '';
+const classes = `${base} ${variants[variant]} ${width} ${className}`.trim();
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    <slot />
+  </a>
+) : (
+  <button class={classes}>
+    <slot />
+  </button>
+)}

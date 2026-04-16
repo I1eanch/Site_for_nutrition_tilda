@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import marinaPhoto from '../assets/marina.jpg';
+---
+
+<section class="relative overflow-hidden" id="about">
+  <div class="max-w-[1100px] mx-auto px-12 py-12 relative z-10 max-md:px-5 max-md:py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-10 items-center max-md:gap-7">
+      <div class="rv">
+        <div class="w-full aspect-[3/4] rounded-3xl bg-gradient-to-br from-brand-light to-gray-100 overflow-hidden flex items-end justify-center relative">
+          <Image
+            src={marinaPhoto}
+            alt="Марина Жигульская"
+            class="w-full h-full object-cover object-top"
+            widths={[360, 720]}
+            sizes="(max-width: 768px) 100vw, 360px"
+          />
+          <div class="absolute bottom-5 left-1/2 -translate-x-1/2 bg-primary text-white py-2 px-4.5 rounded-full text-center whitespace-nowrap">
+            <span class="block text-[10px] font-medium opacity-85 tracking-[0.05em]">Автор программы</span>
+            <span class="block text-sm font-extrabold tracking-[0.04em] uppercase">МАРИНА ЖИГУЛЬСКАЯ</span>
+          </div>
+        </div>
+      </div>
+      <div class="rv">
+        <span class="inline-block bg-brand text-primary text-[11px] font-bold tracking-[0.08em] uppercase px-3.5 py-1 rounded-full mb-4.5">ОБО МНЕ</span>
+        <h2 class="text-[clamp(30px,3.5vw,46px)] font-extrabold text-primary mb-1">Марина Жигульская</h2>
+        <div class="text-[13px] text-brand font-semibold mb-6">Нутрициолог / натуропат · Академия натуропатии «Система здоровья»</div>
+        <p class="text-sm text-gray-700 leading-[1.8] mb-5.5">Я создала эту программу потому что сама прошла путь от «всё в норме по анализам» до понимания того, как на самом деле работает тело. У меня были те же симптомы — усталость, проблемы с ЖКТ, гормональные сбои. Врачи разводили руками.</p>
+        <p class="text-sm text-gray-700 leading-[1.8] mb-5.5">Когда я разобралась в причинах — симптомы ушли сами. И помогла пройти этот путь <strong class="text-primary font-bold">тысячам женщин</strong> — без жёстких диет, без дорогих процедур, без бесконечных визитов к врачам.</p>
+        <p class="text-sm text-gray-700 leading-[1.8] mb-5.5">Мой подход: <strong class="text-primary font-bold">«Как нас придумала природа»</strong> — восстанавливаем то, что заложено природой, убирая то, что мешает. Не лечим симптомы — устраняем причины.</p>
+        <ul class="list-none flex flex-col gap-2.5">
+          <li class="flex gap-2.5 text-[13px] text-gray-700 items-start leading-snug"><span class="w-1.5 h-1.5 min-w-1.5 bg-brand rounded-full mt-1.5"></span><strong class="text-primary font-bold">54 года</strong> — живое доказательство подхода</li>
+          <li class="flex gap-2.5 text-[13px] text-gray-700 items-start leading-snug"><span class="w-1.5 h-1.5 min-w-1.5 bg-brand rounded-full mt-1.5"></span>Нутрициолог / натуропат с опытом <strong class="text-primary font-bold">более 7 лет</strong></li>
+          <li class="flex gap-2.5 text-[13px] text-gray-700 items-start leading-snug"><span class="w-1.5 h-1.5 min-w-1.5 bg-brand rounded-full mt-1.5"></span>Основатель Академии натуропатии <strong class="text-primary font-bold">«Система здоровья»</strong></li>
+          <li class="flex gap-2.5 text-[13px] text-gray-700 items-start leading-snug"><span class="w-1.5 h-1.5 min-w-1.5 bg-brand rounded-full mt-1.5"></span>Более <strong class="text-primary font-bold">6 000 учеников</strong> из 35+ стран</li>
+          <li class="flex gap-2.5 text-[13px] text-gray-700 items-start leading-snug"><span class="w-1.5 h-1.5 min-w-1.5 bg-brand rounded-full mt-1.5"></span>Обучение в <strong class="text-primary font-bold">CNM</strong> (College of Naturopathic Medicine, London)</li>
+          <li class="flex gap-2.5 text-[13px] text-gray-700 items-start leading-snug"><span class="w-1.5 h-1.5 min-w-1.5 bg-brand rounded-full mt-1.5"></span>Основатель и лидер команды нутрициологов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

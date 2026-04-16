@@ -1,0 +1,112 @@
+---
+import SectionLabel from './ui/SectionLabel.astro';
+
+const symptoms = [
+  { num: '01', title: 'Вздутие и метеоризм', text: 'Живот раздувается после каждого приёма пищи. Стыдно носить обтягивающее. Газы, тяжесть, урчание — стали фоном жизни' },
+  { num: '02', title: 'Нулевая энергия', text: 'Встаёте уже уставшей. Кофе не помогает. К обеду хочется лечь. К вечеру нет сил ни на что, кроме дивана' },
+  { num: '03', title: 'Отёки каждый день', text: 'Утром — лицо. Вечером — ноги. Пьёте меньше воды — не помогает. Кольца врезаются в пальцы' },
+  { num: '04', title: 'Проблемы с давлением', text: 'Скачки без причины: то вверх, то вниз. Сердцебиение, приливы жара. Врач назначает таблетки — но причину не ищет' },
+  { num: '05', title: 'Щитовидка «шалит»', text: 'Выпадают волосы, всё время мёрзнете, вес не уходит. Или наоборот — потливость, раздражительность, тремор' },
+  { num: '06', title: 'Потливость и жар', text: 'Бросает в пот без причины. Стыдно на работе, на встречах. Неловко рядом с людьми — и это не климакс' },
+  { num: '07', title: 'Упавшее либидо', text: 'Желание пропало. Близость стала обязанностью. Это влияет на отношения — и вы чувствуете вину' },
+  { num: '08', title: 'Вес стоит намертво', text: 'Диеты, ограничения, подсчёт калорий — а цифра на весах не сдвигается. Или сдвигается и возвращается' },
+  { num: '09', title: 'Тревога и плохой сон', text: 'Мысли крутятся по ночам. Просыпаетесь в 3–4 утра. Днём — туман в голове. Срывы стали нормой' },
+];
+---
+
+<section class="relative overflow-hidden" id="symptoms">
+  <div class="max-w-[1100px] mx-auto px-12 py-12 max-md:px-5 max-md:py-8 relative z-10">
+    <SectionLabel>Узнаёте себя?</SectionLabel>
+    <h2 class="rv text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-tight mb-3.5 tracking-[--tracking-section]">
+      Эти симптомы мешают вам жить —<br />а врачи говорят <span class="text-brand">«всё в норме»</span>
+    </h2>
+    <p class="rv text-[15px] text-gray-700 leading-relaxed max-w-[620px]">
+      Вы ходите по специалистам, сдаёте анализы — и слышите: «У вас всё хорошо». Но вы-то чувствуете, что нет.
+    </p>
+
+    <div class="spotlight-grid stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-6">
+      {symptoms.map(s => (
+        <div class="spotlight-card bg-white border border-border rounded-2xl p-6 relative">
+          <div class="relative z-10">
+            <div class="text-[34px] font-extrabold text-gray-200 leading-none mb-2.5">{s.num}</div>
+            <div class="text-sm text-gray-700 leading-relaxed">
+              <strong class="text-primary font-bold block mb-0.5">{s.title}</strong>
+              {s.text}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const grid = document.querySelector('.spotlight-grid') as HTMLElement | null;
+  if (grid) {
+    grid.addEventListener('pointermove', (e: PointerEvent) => {
+      grid.style.setProperty('--x', `${e.clientX}px`);
+      grid.style.setProperty('--y', `${e.clientY}px`);
+    });
+  }
+</script>
+
+<style>
+  @media (hover: hover) {
+    .spotlight-card {
+      transition: box-shadow 0.3s ease;
+    }
+
+    .spotlight-card::before,
+    .spotlight-card::after {
+      content: '';
+      position: absolute;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Background spotlight — green wash follows cursor */
+    .spotlight-card::before {
+      inset: 0;
+      z-index: 1;
+      background: radial-gradient(
+        400px circle at var(--x) var(--y),
+        rgba(24, 226, 153, 0.15),
+        transparent 50%
+      );
+      background-attachment: fixed;
+    }
+
+    /* Border glow — bright, masked to border area */
+    .spotlight-card::after {
+      inset: -1px;
+      z-index: 2;
+      padding: 2px;
+      background: radial-gradient(
+        300px circle at var(--x) var(--y),
+        rgba(24, 226, 153, 0.8),
+        transparent 50%
+      );
+      background-attachment: fixed;
+      filter: brightness(1.5);
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .spotlight-grid:hover .spotlight-card::before,
+    .spotlight-grid:hover .spotlight-card::after {
+      opacity: 1;
+    }
+
+    .spotlight-grid:hover .spotlight-card {
+      box-shadow: 0 0 30px rgba(24, 226, 153, 0.06);
+    }
+  }
+</style>

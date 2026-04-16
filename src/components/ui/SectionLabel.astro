@@ -1,0 +1,13 @@
+---
+interface Props {
+  dark?: boolean;
+  class?: string;
+}
+
+const { dark = false, class: className = '' } = Astro.props;
+const color = dark ? 'text-white/40' : 'text-brand';
+---
+
+<span class={`block font-mono text-sm font-semibold tracking-[0.12em] uppercase ${color} mb-3 ${className}`}>
+  <slot />
+</span>

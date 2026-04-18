@@ -1,31 +1,62 @@
 ---
-import SectionLabel from './ui/SectionLabel.astro';
+import SectionLabel from "./ui/SectionLabel.astro";
 
 const bonuses = [
-  { tag: 'Интенсив', title: 'Про женское тело', desc: 'Движение, осанка, тазовое дно, биомеханика — убираем блоки, которые мешают восстановлению' },
-  { tag: 'Справочник', title: 'Аптечка нутрициолога', desc: 'Какие БАДы работают, как выбирать, как не навредить — без лишних трат' },
-  { tag: 'Приложение', title: 'Тренировки на 1 месяц', desc: 'Доступ к приложению с тренировками, подобранными под программу восстановления' },
-  { tag: 'Мини-курс', title: 'Железо, ферритин и энергия', desc: 'Как понять что у вас дефицит и почему он блокирует и похудение, и энергию, и либидо' },
-  { tag: 'Мини-курс', title: 'Женское здоровье: цикл и ПМС', desc: 'Как гормональные колебания влияют на вес, настроение и самочувствие' },
-  { tag: 'Протокол', title: 'Восстановление после срывов', desc: 'Пошаговый план без чувства вины — после отпуска, праздников, откатов' },
+  {
+    tag: "Справочник",
+    title: "Аптечка нутрициолога",
+    desc: "Какие БАДы работают, как выбирать, как не навредить — без лишних трат",
+  },
+  {
+    tag: "Приложение",
+    title: "Тренировки на 1 месяц",
+    desc: "Доступ к приложению с тренировками, подобранными под программу восстановления",
+  },
+  {
+    tag: "Мини-курс",
+    title: "Железо, ферритин и энергия",
+    desc: "Как понять что у вас дефицит и почему он блокирует и похудение, и энергию, и либидо",
+  },
+  {
+    tag: "Мини-курс",
+    title: "Женское здоровье: цикл и ПМС",
+    desc: "Как гормональные колебания влияют на вес, настроение и самочувствие",
+  },
+  {
+    tag: "Протокол",
+    title: "Восстановление после срывов",
+    desc: "Пошаговый план без чувства вины — после отпуска, праздников, откатов",
+  },
 ];
 ---
 
 <section class="relative overflow-hidden">
   <div class="max-w-[1100px] mx-auto px-12 py-12 max-md:px-5 max-md:py-8">
     <SectionLabel>Подарки к программе</SectionLabel>
-    <h2 class="rv text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-tight mb-3.5 tracking-[--tracking-section]">
-      Бонусы включены в стоимость
+    <h2
+      class="rv text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-tight mb-3.5 tracking-[--tracking-section]"
+    >
+      Подарки первым 30 участникам
     </h2>
 
-    <div class="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-6">
-      {bonuses.map(b => (
-        <div class="bg-white border border-border rounded-2xl p-5.5 transition-colors duration-200 hover:border-border-md relative overflow-hidden">
-          <span class="inline-block text-[10px] font-bold tracking-[0.1em] uppercase text-brand-deep bg-brand-light border border-brand/20 px-2.5 py-0.5 rounded-full mb-2.5">{b.tag}</span>
-          <div class="text-[13px] font-bold text-primary mb-1.5 leading-snug">{b.title}</div>
-          <div class="text-xs text-gray-400 leading-relaxed relative z-10">{b.desc}</div>
-        </div>
-      ))}
+    <div
+      class="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-6"
+    >
+      {
+        bonuses.map((b) => (
+          <div class="bg-brand/4 border border-brand/20 rounded-2xl p-5.5 transition-colors duration-200 hover:border-brand/40 relative overflow-hidden">
+            <span class="inline-block text-[10px] font-bold tracking-[0.1em] uppercase text-brand-deep bg-brand-light border border-brand/20 px-2.5 py-0.5 rounded-full mb-2.5">
+              {b.tag}
+            </span>
+            <div class="text-[13px] font-bold text-primary mb-1.5 leading-snug">
+              {b.title}
+            </div>
+            <div class="text-xs text-gray-400 leading-relaxed relative z-10">
+              {b.desc}
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

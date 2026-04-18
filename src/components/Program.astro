@@ -13,11 +13,18 @@ import SectionLabel from './ui/SectionLabel.astro';
     </p>
 
     <!-- Tabs -->
-    <div class="rv flex gap-1 mt-7 mb-6 bg-gray-100 border border-border p-1 rounded-full w-fit max-md:flex-wrap max-md:w-full">
-      <button class="tab-btn px-5.5 py-2.5 border-none bg-primary text-white rounded-full font-sans text-[13px] font-bold cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="pre">Предобучение</button>
-      <button class="tab-btn px-5.5 py-2.5 border-none bg-transparent text-gray-400 rounded-full font-sans text-[13px] font-medium cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="m1">Модуль 1 · Стресс</button>
-      <button class="tab-btn px-5.5 py-2.5 border-none bg-transparent text-gray-400 rounded-full font-sans text-[13px] font-medium cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="m2">Модуль 2 · ЖКТ</button>
-      <button class="tab-btn px-5.5 py-2.5 border-none bg-transparent text-gray-400 rounded-full font-sans text-[13px] font-medium cursor-pointer transition-colors duration-200 whitespace-nowrap" data-tab="m3">Модуль 3 · Детокс</button>
+    <div
+      id="program-tabs"
+      class="rv relative flex gap-0.5 mt-7 mb-6 bg-gray-100 border border-border p-1 rounded-full w-fit max-md:flex-wrap max-md:w-full"
+    >
+      <span
+        id="program-indicator"
+        class="absolute top-0 left-0 bg-brand rounded-full pointer-events-none transition-[transform,width,height] duration-300 ease-out"
+      ></span>
+      <button class="program-tab-btn" data-tab="pre" data-active>Предобучение</button>
+      <button class="program-tab-btn" data-tab="m1">Модуль 1 · Стресс</button>
+      <button class="program-tab-btn" data-tab="m2">Модуль 2 · ЖКТ</button>
+      <button class="program-tab-btn" data-tab="m3">Модуль 3 · Детокс</button>
     </div>
 
     <!-- Tab: Предобучение -->
@@ -194,18 +201,64 @@ import SectionLabel from './ui/SectionLabel.astro';
   </div>
 </section>
 
+<style>
+  .program-tab-btn {
+    position: relative;
+    z-index: 10;
+    padding: 0.625rem 1.375rem;
+    border: none;
+    background: transparent;
+    color: var(--color-gray-400);
+    border-radius: 9999px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .program-tab-btn:hover { color: var(--color-primary); }
+  .program-tab-btn[data-active] { color: var(--color-primary); font-weight: 700; }
+  .program-tab-btn[data-active]:hover { color: var(--color-primary); }
+</style>
+
 <script>
-  document.querySelectorAll<HTMLButtonElement>('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+  const tabsContainer = document.getElementById('program-tabs');
+  const progIndicator = document.getElementById('program-indicator');
+  if (tabsContainer && progIndicator) {
+    const buttons = Array.from(tabsContainer.querySelectorAll<HTMLButtonElement>('.program-tab-btn'));
+
+    const moveTo = (el: HTMLButtonElement, animate = true) => {
+      if (!animate) progIndicator.style.transition = 'none';
+      const rect = el.getBoundingClientRect();
+      const parentRect = tabsContainer.getBoundingClientRect();
+      progIndicator.style.width = `${rect.width}px`;
+      progIndicator.style.height = `${rect.height}px`;
+      progIndicator.style.transform = `translate(${rect.left - parentRect.left}px, ${rect.top - parentRect.top}px)`;
+      if (!animate) requestAnimationFrame(() => { progIndicator.style.transition = ''; });
+    };
+
+    const activate = (btn: HTMLButtonElement, animate = true) => {
+      buttons.forEach(b => b.removeAttribute('data-active'));
+      btn.setAttribute('data-active', '');
+      moveTo(btn, animate);
       const target = btn.dataset.tab!;
-      document.querySelectorAll('.tab-btn').forEach(b => {
-        b.classList.remove('bg-primary', 'text-white', 'font-bold');
-        b.classList.add('bg-transparent', 'text-gray-400', 'font-medium');
-      });
-      btn.classList.remove('bg-transparent', 'text-gray-400', 'font-medium');
-      btn.classList.add('bg-primary', 'text-white', 'font-bold');
       document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
       document.getElementById(target)?.classList.add('active');
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => activate(btn));
     });
-  });
+
+    const initial = buttons.find(b => b.hasAttribute('data-active')) ?? buttons[0];
+    if (initial) {
+      requestAnimationFrame(() => moveTo(initial, false));
+    }
+
+    window.addEventListener('resize', () => {
+      const active = buttons.find(b => b.hasAttribute('data-active'));
+      if (active) moveTo(active, false);
+    });
+  }
 </script>

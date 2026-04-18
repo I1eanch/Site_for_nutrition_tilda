@@ -1,86 +1,118 @@
 ---
 const stats = [
-  { value: 6000, display: '6 000', accent: '+', label: 'учеников из 35+ стран' },
-  { value: 30, display: '30', accent: '', label: 'дней до результата' },
-  { value: 93, display: '93', accent: '%', label: 'замечают улучшение к седьмому дню' },
-  { value: 7, display: '7', accent: '+', label: 'лет опыта автора' },
+  {
+    value: 6000,
+    display: "6 000",
+    accent: "+",
+    label: "учеников из 35+ стран",
+  },
+  { value: 30, display: "30", accent: "", label: "дней до результата" },
+  {
+    value: 87,
+    display: "87",
+    accent: "%",
+    label: "замечают улучшение к десятому дню",
+  },
+  { value: 7, display: "7", accent: "+", label: "лет опыта автора" },
 ];
 ---
 
 <section class="relative overflow-hidden">
   <div class="max-w-[1100px] mx-auto px-12 py-6 max-md:px-5">
-    <div class="rv grid grid-cols-4 max-md:grid-cols-2 rounded-2xl border border-border bg-white shadow-card overflow-hidden" id="stats-grid">
-      {stats.map((s, i) => (
-        <div class:list={[
-          'group relative py-8 px-5 text-center transition-colors duration-300 hover:bg-brand/3',
-          i < 3 && 'border-r border-border max-md:border-r-0',
-          i < 2 && 'max-md:border-b max-md:border-border',
-          i === 2 && 'max-md:border-b max-md:border-border max-md:border-r border-r',
-        ]}>
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-brand rounded-full transition-all duration-300 group-hover:w-12"></div>
-          <div class="text-[clamp(32px,3.5vw,44px)] font-extrabold text-primary leading-none mb-2 tracking-tight">
-            <span class="stat-num" data-target={s.value} data-display={s.display}>0</span><span class="text-brand">{s.accent}</span>
+    <div
+      class="rv grid grid-cols-4 max-md:grid-cols-2 rounded-2xl border border-border bg-white shadow-card overflow-hidden"
+      id="stats-grid"
+    >
+      {
+        stats.map((s, i) => (
+          <div
+            class:list={[
+              "group relative py-8 px-5 text-center transition-colors duration-300 hover:bg-brand/3",
+              i < 3 && "border-r border-border max-md:border-r-0",
+              i < 2 && "max-md:border-b max-md:border-border",
+              i === 2 &&
+                "max-md:border-b max-md:border-border max-md:border-r border-r",
+            ]}
+          >
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-brand rounded-full transition-all duration-300 group-hover:w-12" />
+            <div class="text-[clamp(32px,3.5vw,44px)] font-extrabold text-primary leading-none mb-2 tracking-tight">
+              <>
+                <span
+                  class="stat-num"
+                  data-target={s.value}
+                  data-display={s.display}
+                >
+                  0
+                </span>
+                <span class="text-brand">{s.accent}</span>
+              </>
+            </div>
+            <div class="text-sm text-gray-400 font-medium leading-snug">
+              {s.label}
+            </div>
           </div>
-          <div class="text-sm text-gray-400 font-medium leading-snug">{s.label}</div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
 
 <script>
   function animateCounters() {
-    const grid = document.getElementById('stats-grid');
+    const grid = document.getElementById("stats-grid");
     if (!grid) return;
 
     let fired = false;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-          grid.querySelectorAll<HTMLElement>('.stat-num').forEach((el) => {
-            const target = parseInt(el.dataset.target || '0', 10);
-            const display = el.dataset.display || String(target);
-            const duration = 2000;
-            const start = performance.now();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !fired) {
+            fired = true;
+            grid.querySelectorAll<HTMLElement>(".stat-num").forEach((el) => {
+              const target = parseInt(el.dataset.target || "0", 10);
+              const display = el.dataset.display || String(target);
+              const duration = 2000;
+              const start = performance.now();
 
-            function easeOutExpo(t: number) {
-              return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-            }
-
-            function format(n: number): string {
-              if (target >= 1000) {
-                return n.toLocaleString('ru-RU').replace(/,/g, ' ');
+              function easeOutExpo(t: number) {
+                return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
               }
-              return String(n);
-            }
 
-            function tick(now: number) {
-              const elapsed = now - start;
-              const progress = Math.min(elapsed / duration, 1);
-              const eased = easeOutExpo(progress);
-              const current = Math.round(eased * target);
-
-              el.textContent = format(current);
-
-              if (progress < 1) {
-                requestAnimationFrame(tick);
-              } else {
-                el.textContent = display;
+              function format(n: number): string {
+                if (target >= 1000) {
+                  return n.toLocaleString("ru-RU").replace(/,/g, " ");
+                }
+                return String(n);
               }
-            }
 
-            requestAnimationFrame(tick);
-          });
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
+              function tick(now: number) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutExpo(progress);
+                const current = Math.round(eased * target);
+
+                el.textContent = format(current);
+
+                if (progress < 1) {
+                  requestAnimationFrame(tick);
+                } else {
+                  el.textContent = display;
+                }
+              }
+
+              requestAnimationFrame(tick);
+            });
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
 
     observer.observe(grid);
   }
 
-  document.addEventListener('astro:page-load', animateCounters);
+  document.addEventListener("astro:page-load", animateCounters);
   animateCounters();
 </script>

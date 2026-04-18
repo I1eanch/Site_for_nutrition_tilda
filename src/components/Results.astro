@@ -1,27 +1,37 @@
 ---
+import { Image } from 'astro:assets';
 import SectionLabel from './ui/SectionLabel.astro';
+import gulnaraPhoto from '../assets/cases/gulnara.png';
+import olgaPavlovaPhoto from '../assets/cases/olga-pavlova.png';
+import dinaraPhoto from '../assets/cases/dinara.png';
+import olgaAstanaPhoto from '../assets/cases/olga-astana.png';
 
 const results = [
   {
+    photo: gulnaraPhoto,
     cat: 'Комплексное восстановление · Результат за 2 года',
     before: '65 лет, 52 размер одежды, на горизонте операция по замене сустава. Поверхностный гастрит, перетяжка желчного пузыря, умеренный холестаз, аутоиммунный тиреоидит, эндометриоз, хронический бронхит, грыжи и протрузии в позвоночнике, артроз колен 2 и 3 степени. Энергии ноль, желаний ноль, внутри бардак',
     after: 'Полная трансформация за 2 года в школе здоровья. Сейчас 67 лет — активный образ жизни, путешествия, энергия, которой не было даже в молодости. Операция не понадобилась',
     person: 'Гульнара, 67 лет · 2 года в программе',
     wide: true,
+    photoLeft: true,
   },
   {
+    photo: olgaPavlovaPhoto,
     cat: 'Щитовидка · Давление · Инсулинорезистентность',
     before: 'вес постоянно возвращался, кожа рыхлая и тусклая, волосы выпадали, кожа сухая, трескались пятки, энергии ноль. Инсулинорезистентность, отрыжка и вздутие — постоянные спутники. Повышенное давление. На УЗИ — два узла в щитовидной железе, в желчном — взвесь. Папилломы на руках',
     after: 'за два месяца — узлы в щитовидной железе рассосались, врач снял с учёта. Ушёл лишний вес, давление нормализовалось. Волосы выросли на 4 см, проснулись новые луковицы. Кожа сияющая, вздутие и метеоризм исчезли. Папилломы исчезли сами — без косметологических вмешательств',
     person: 'Ольга Павлова, Талдыкорган',
   },
   {
+    photo: dinaraPhoto,
     cat: 'Энергия · Стресс · Вес · Результат за 1 год',
     before: 'отсутствие энергии и сил — ещё не встала, уже устала. Артрит и артроз. Хронический стресс: 2 ребёнка с диагнозом аутизм, восстановление дома после потопа, потеря близкого человека. Лишние килограммы, самочувствие на нуле. Больницы и капельницы давали лишь временное облегчение',
     after: 'через 2 месяца — минус 7 кг и 15 см в объёмах, ушли отёки, прошли боли в спине, больше энергии, увлажнённая кожа. Через год — минус 12 кг, снова 44 размер, боли в позвоночнике ушли, стала спокойной, уравновешенной и позитивной',
     person: 'Динара Калиева, Казахстан',
   },
   {
+    photo: olgaAstanaPhoto,
     cat: 'Вес · Трансформация · Результат за 6 месяцев',
     before: 'лишний вес, низкая энергия, отсутствие понимания как работает организм. Множество безуспешных попыток похудеть через диеты и ограничения',
     after: 'результат комплексной работы за 6 месяцев — видимая трансформация. Прошла программу, затем обучилась на нутрициолога, сейчас помогает другим ученикам восстанавливать здоровье',
@@ -42,20 +52,62 @@ const results = [
     </p>
 
     <div class="stagger-grid grid grid-cols-1 md:grid-cols-2 gap-4.5 mt-6">
-      {results.map(r => (
-        <div class={`bg-white border border-border rounded-[20px] p-6.5 relative overflow-hidden transition-colors duration-200 hover:border-border-md ${r.wide ? 'md:col-span-2' : ''}`}>
+      {results.map(r => {
+        const catPill = (
+          <div class="text-center mb-4">
+            <span class="inline-block text-[13px] font-bold tracking-[0.12em] uppercase px-4 py-1.5 rounded-full text-brand-deep bg-brand-light">{r.cat}</span>
+          </div>
+        );
+        return (
+        <div class={`bg-brand/4 border border-brand/20 rounded-[20px] p-6.5 relative overflow-hidden transition-colors duration-200 hover:border-brand/40 ${r.wide ? 'md:col-span-2' : ''}`}>
           <!-- Green top border -->
           <div class="absolute top-0 left-0 right-0 h-1 rounded-t-[20px] bg-gradient-to-r from-brand to-brand-deep"></div>
-          <span class="inline-block text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-0.5 rounded-full text-brand-deep bg-brand-light mb-3">{r.cat}</span>
-          <div class="text-xs text-gray-400 leading-relaxed pb-3 border-b border-border mb-3">
-            <span class="font-bold text-red-soft">До: </span>{r.before}
-          </div>
-          <div class="text-[13px] text-primary font-semibold leading-relaxed">
-            <span class="font-bold text-brand">После: </span>{r.after}
-          </div>
-          <div class="mt-3.5 text-[11px] text-gray-400 font-medium">{r.person}</div>
+          {r.wide ? (
+            <div class="flex flex-col md:flex-row gap-5 md:items-center">
+              <div class={`flex-1 min-w-0 order-2 ${r.photoLeft ? 'md:order-2' : 'md:order-1'}`}>
+                {catPill}
+                <div class="text-xs text-gray-400 leading-relaxed pb-3 border-b border-border mb-3">
+                  <span class="font-bold text-red-soft">До: </span>{r.before}
+                </div>
+                <div class="text-[13px] text-primary font-semibold leading-relaxed">
+                  <span class="font-bold text-brand">После: </span>{r.after}
+                </div>
+                <div class="mt-3.5 text-[11px] text-gray-400 font-medium">{r.person}</div>
+              </div>
+              <div class={`w-full md:w-[340px] md:shrink-0 order-1 rounded-xl overflow-hidden border border-brand/15 bg-white ${r.photoLeft ? 'md:order-1' : 'md:order-2'}`}>
+                <Image
+                  src={r.photo}
+                  alt={`До и после: ${r.person}`}
+                  class="w-full h-auto block"
+                  width={680}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          ) : (
+            <>
+              {catPill}
+              <div class="rounded-xl overflow-hidden border border-brand/15 mb-4 bg-white">
+                <Image
+                  src={r.photo}
+                  alt={`До и после: ${r.person}`}
+                  class="w-full h-auto block"
+                  width={1200}
+                  loading="lazy"
+                />
+              </div>
+              <div class="text-xs text-gray-400 leading-relaxed pb-3 border-b border-border mb-3">
+                <span class="font-bold text-red-soft">До: </span>{r.before}
+              </div>
+              <div class="text-[13px] text-primary font-semibold leading-relaxed">
+                <span class="font-bold text-brand">После: </span>{r.after}
+              </div>
+              <div class="mt-3.5 text-[11px] text-gray-400 font-medium">{r.person}</div>
+            </>
+          )}
         </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

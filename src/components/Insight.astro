@@ -1,68 +1,132 @@
 ---
-import { Image } from 'astro:assets';
-import SectionLabel from './ui/SectionLabel.astro';
-import insightBg from '../assets/img/insight-bg.png';
+import { Image } from "astro:assets";
+import SectionLabel from "./ui/SectionLabel.astro";
+import insightBg from "../assets/img/insight-bg.png";
 
 const points = [
-  { icon: '⚡', title: 'Хронический стресс запускает каскад', text: 'Кортизол бьёт по надпочечникам → гормоны летят → ЖКТ выключается → токсины накапливаются. Одна причина — десятки симптомов' },
-  { icon: '🌿', title: 'Нарушенный ЖКТ — корень 80% жалоб', text: 'Когда пищеварение сбито — не усваиваются витамины, накапливаются токсины, страдают гормоны, кожа, энергия' },
-  { icon: '🔄', title: 'Мы не лечим симптомы — мы убираем причину', text: 'Поэтому у наших учениц уходят такие разные проблемы: от вздутия до давления, от отёков до либидо' },
-  { icon: '✦', title: 'Тело восстанавливается само', text: 'Когда вы убираете то, что мешает — организм запускает восстановление. Вес, энергия, гормоны приходят в норму как следствие' },
+  {
+    icon: "⚡",
+    title: "Хронический стресс запускает каскад",
+    text: "Кортизол бьёт по надпочечникам → гормоны летят → ЖКТ выключается → токсины накапливаются. Одна причина — десятки симптомов",
+  },
+  {
+    icon: "🌿",
+    title: "Нарушенный ЖКТ — корень 80% жалоб",
+    text: "Когда пищеварение сбито — не усваиваются витамины, накапливаются токсины, страдают гормоны, кожа, энергия",
+  },
+  {
+    icon: "🔄",
+    title: "Мы не лечим симптомы — мы убираем причину",
+    text: "Поэтому у наших учениц уходят такие разные проблемы: от вздутия до давления, от отёков до либидо",
+  },
+  {
+    icon: "✦",
+    title: "Тело восстанавливается само",
+    text: "Когда вы убираете то, что мешает — организм запускает восстановление. Вес, энергия, гормоны приходят в норму как следствие",
+  },
 ];
 
 const symptoms = [
-  'Вздутие, метеоризм',
-  'Отёки, потливость',
-  'Давление, щитовидка',
-  'Упавшее либидо',
-  'Нет энергии, лишний вес',
+  "Вздутие, метеоризм",
+  "Отёки, потливость",
+  "Давление, щитовидка",
+  "Упавшее либидо",
+  "Нет энергии, лишний вес",
 ];
 ---
 
 <section class="relative overflow-hidden bg-primary">
   <div class="absolute inset-0 pointer-events-none opacity-30">
-    <Image src={insightBg} alt="" class="w-full h-full object-cover" widths={[1920]} sizes="100vw" />
+    <Image
+      src={insightBg}
+      alt=""
+      class="w-full h-full object-cover"
+      widths={[1920]}
+      sizes="100vw"
+    />
   </div>
-  <div class="max-w-[1100px] mx-auto px-12 py-12 relative z-10 max-md:px-5 max-md:py-8">
-    <div class="rv grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-md:gap-7">
+  <div
+    class="max-w-[1100px] mx-auto px-12 py-12 relative z-10 max-md:px-5 max-md:py-8"
+  >
+    <div
+      class="rv grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-md:gap-7"
+    >
       <div>
         <SectionLabel dark>Ключевая идея</SectionLabel>
-        <p class="text-[clamp(24px,3vw,38px)] font-semibold text-white leading-[1.5] tracking-[--tracking-section]">
-          Вздутие, давление, отёки, щитовидка, либидо —<br />это не <span class="text-brand">разные болезни</span>.<br /><br />
-          Это один и тот же сбой,<br />у которого есть <span class="text-brand">одна причина</span>.
+        <p
+          class="text-[clamp(24px,3vw,38px)] font-semibold text-white leading-[1.5] tracking-[--tracking-section]"
+        >
+          Вздутие, давление, отёки, проблемы щитовидки, упавшее либидо&nbsp;—&nbsp;это&nbsp;не<br
+          /><span class="text-brand">разные болезни</span>.<br /><br />
+          Это один и тот же сбой,<br />у которого есть <span class="text-brand"
+            >одна причина</span
+          >.
         </p>
       </div>
       <div class="flex flex-col gap-4.5">
-        {points.map(p => (
-          <div class="flex gap-3.5 items-start">
-            <div class="w-9 h-9 min-w-9 rounded-full bg-white/[0.08] border border-white/[0.18] flex items-center justify-center text-[15px]">{p.icon}</div>
-            <div>
-              <h4 class="text-sm font-bold text-white mb-0.5">{p.title}</h4>
-              <p class="text-xs text-white/55 leading-relaxed">{p.text}</p>
+        {
+          points.map((p) => (
+            <div class="flex gap-3.5 items-start">
+              <div class="w-9 h-9 min-w-9 rounded-full bg-white/[0.08] border border-white/[0.18] flex items-center justify-center text-[15px]">
+                {p.icon}
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white mb-0.5">{p.title}</h4>
+                <p class="text-xs text-white/55 leading-relaxed">{p.text}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
 
     <!-- Schema -->
-    <div id="schema-flow" class="mt-6 bg-white/[0.06] border border-white/10 rounded-[20px] p-7 max-md:p-5">
-      <h3 class="text-2xl font-extrabold text-white/70 tracking-[--tracking-section] mb-8 text-center">Как это работает</h3>
-      <div class="flex items-center gap-6 justify-center flex-wrap max-md:flex-col">
+    <div
+      id="schema-flow"
+      class="mt-6 bg-white/[0.06] border border-white/10 rounded-[20px] p-7 max-md:p-5"
+    >
+      <h3
+        class="text-2xl font-extrabold text-white/70 tracking-[--tracking-section] mb-8 text-center"
+      >
+        Как это работает
+      </h3>
+      <div
+        class="flex items-center gap-6 justify-center flex-wrap max-md:flex-col"
+      >
         <div class="schema-symptoms flex flex-col gap-2 min-w-[216px]">
-          {symptoms.map(s => (
-            <div class="bg-red-soft/15 border border-red-soft/30 rounded-[12px] px-4 py-2.5 text-sm text-white/75 font-medium text-center">{s}</div>
-          ))}
+          {
+            symptoms.map((s) => (
+              <div class="bg-red-soft/15 border border-red-soft/30 rounded-[12px] px-4 py-2.5 text-sm text-white/75 font-medium text-center">
+                {s}
+              </div>
+            ))
+          }
         </div>
-        <div class="schema-arrow text-[34px] text-brand font-extrabold shrink-0 max-md:rotate-90">←</div>
-        <div class="schema-cause bg-brand/15 border-2 border-brand/40 rounded-2xl py-7 px-8.5 text-center min-w-[240px]">
+        <div
+          class="schema-arrow text-[34px] text-brand font-extrabold shrink-0 max-md:rotate-90"
+        >
+          ←
+        </div>
+        <div
+          class="schema-cause bg-brand/15 border-2 border-brand/40 rounded-2xl py-7 px-8.5 text-center min-w-[240px]"
+        >
           <h4 class="text-lg font-extrabold text-brand mb-2">Одна причина</h4>
-          <p class="text-[13px] text-white/50 leading-relaxed">Хронический стресс +<br />нарушенный ЖКТ +<br />токсическая нагрузка</p>
+          <p class="text-[13px] text-white/50 leading-relaxed">
+            Хронический стресс +<br />нарушенный ЖКТ +<br />токсическая нагрузка
+          </p>
         </div>
-        <div class="schema-arrow text-[34px] text-brand font-extrabold shrink-0 max-md:rotate-90">→</div>
-        <div class="schema-approach bg-brand/12 border-2 border-brand/35 rounded-2xl py-7 px-8.5 text-center min-w-[216px]">
+        <div
+          class="schema-arrow text-[34px] text-brand font-extrabold shrink-0 max-md:rotate-90"
+        >
+          →
+        </div>
+        <div
+          class="schema-approach bg-brand/12 border-2 border-brand/35 rounded-2xl py-7 px-8.5 text-center min-w-[216px]"
+        >
           <h4 class="text-lg font-extrabold text-brand mb-2">Наш подход</h4>
-          <p class="text-[13px] text-white/50 leading-relaxed">Убираем причину<br />широким фронтом —<br />симптомы уходят сами</p>
+          <p class="text-[13px] text-white/50 leading-relaxed">
+            Убираем причину<br />широким фронтом —<br />симптомы уходят сами
+          </p>
         </div>
       </div>
     </div>
@@ -70,28 +134,50 @@ const symptoms = [
 </section>
 
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
-  const schema = document.getElementById('schema-flow');
+  const schema = document.getElementById("schema-flow");
   if (schema) {
-    const symptoms = schema.querySelectorAll('.schema-symptoms > *');
-    const arrows = schema.querySelectorAll('.schema-arrow');
-    const cause = schema.querySelector('.schema-cause');
-    const approach = schema.querySelector('.schema-approach');
+    const symptoms = schema.querySelectorAll(".schema-symptoms > *");
+    const arrows = schema.querySelectorAll(".schema-arrow");
+    const cause = schema.querySelector(".schema-cause");
+    const approach = schema.querySelector(".schema-approach");
 
     gsap.set([symptoms, arrows, cause, approach], { opacity: 0, y: 16 });
     gsap.set(cause, { scale: 0.9 });
 
     const tl = gsap.timeline({
-      scrollTrigger: { trigger: schema, start: 'top 85%', once: true },
+      scrollTrigger: { trigger: schema, start: "top 85%", once: true },
     });
 
-    tl.to(symptoms, { opacity: 1, y: 0, stagger: 0.08, duration: 0.4, ease: 'power2.out' })
-      .to(arrows[0], { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.1')
-      .to(cause, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' }, '-=0.1')
-      .to(arrows[1], { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, '-=0.1')
-      .to(approach, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.1');
+    tl.to(symptoms, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.08,
+      duration: 0.4,
+      ease: "power2.out",
+    })
+      .to(
+        arrows[0],
+        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
+        "-=0.1",
+      )
+      .to(
+        cause,
+        { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power2.out" },
+        "-=0.1",
+      )
+      .to(
+        arrows[1],
+        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" },
+        "-=0.1",
+      )
+      .to(
+        approach,
+        { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+        "-=0.1",
+      );
   }
 </script>

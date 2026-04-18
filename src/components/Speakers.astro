@@ -40,13 +40,13 @@ const speakers = [
     <div class="stagger-grid grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
       {speakers.map(s => (
         <div class="bg-white border border-border rounded-[20px] p-7 text-center transition-colors duration-200 hover:border-border-md">
-          <div class="w-[130px] h-[130px] rounded-full mx-auto mb-4.5 overflow-hidden border-[3px] border-brand-light">
+          <div class="w-[200px] h-[200px] rounded-full mx-auto mb-4.5 overflow-hidden border-[3px] border-brand-light">
             <Image
               src={s.photo}
               alt={s.name}
               class="w-full h-full object-cover"
-              width={130}
-              height={130}
+              width={400}
+              height={400}
             />
           </div>
           <div class="text-base font-extrabold text-primary mb-1.5">{s.name}</div>

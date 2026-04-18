@@ -7,15 +7,20 @@ import Button from './ui/Button.astro';
     Академия натуропатии<br /><span class="text-brand">«Система здоровья»</span>
   </div>
 
-  <ul class="hidden md:flex items-center gap-7 list-none">
-    <li><a href="#symptoms" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Симптомы</a></li>
-    <li><a href="#program" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Программа</a></li>
-    <li><a href="#about" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Об авторе</a></li>
-    <li><a href="#pricing" class="text-[13px] text-gray-500 font-medium no-underline transition-colors duration-200 hover:text-brand">Стоимость</a></li>
-    <li>
-      <Button variant="primary" href="#pricing" class="py-2! px-5! text-[13px]! font-bold!">Записаться</Button>
-    </li>
-  </ul>
+  <div class="hidden md:flex items-center gap-4">
+    <div id="nav-pill" class="relative flex items-center bg-gray-100 rounded-full p-1">
+      <span
+        id="nav-indicator"
+        class="absolute top-1 left-0 bg-brand rounded-full pointer-events-none opacity-0 transition-[transform,width,opacity] duration-300 ease-out"
+        style="height: calc(100% - 0.5rem);"
+      ></span>
+      <a href="#symptoms" data-nav class="nav-pill-link">Симптомы</a>
+      <a href="#program" data-nav class="nav-pill-link">Программа</a>
+      <a href="#about" data-nav class="nav-pill-link">Об авторе</a>
+      <a href="#pricing" data-nav class="nav-pill-link">Стоимость</a>
+    </div>
+    <Button variant="brand" href="#pricing" class="py-2! px-5! text-[13px]! font-bold!">Записаться</Button>
+  </div>
 
   <!-- Mobile hamburger -->
   <button class="md:hidden flex flex-col gap-1.5 p-2" id="mobile-menu-btn" aria-label="Меню">
@@ -34,6 +39,23 @@ import Button from './ui/Button.astro';
   <Button variant="brand" href="#pricing" fullWidth class="mt-4">Записаться на программу</Button>
 </div>
 
+<style>
+  .nav-pill-link {
+    position: relative;
+    z-index: 10;
+    padding: 0.375rem 1rem;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-gray-500);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .nav-pill-link:hover { color: var(--color-primary); }
+  .nav-pill-link[data-active] { color: var(--color-primary); }
+  .nav-pill-link[data-active]:hover { color: var(--color-primary); }
+</style>
+
 <script>
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -48,5 +70,70 @@ import Button from './ui/Button.astro';
         mobileMenu.classList.remove('flex');
       });
     });
+  }
+
+  const pill = document.getElementById('nav-pill');
+  const indicator = document.getElementById('nav-indicator');
+  if (pill && indicator) {
+    const links = Array.from(pill.querySelectorAll<HTMLAnchorElement>('[data-nav]'));
+    let activeLink: HTMLAnchorElement | null = null;
+    let hoveredLink: HTMLAnchorElement | null = null;
+
+    const moveTo = (el: HTMLAnchorElement | null) => {
+      links.forEach(l => l.removeAttribute('data-active'));
+      if (!el) {
+        indicator.style.opacity = '0';
+        return;
+      }
+      el.setAttribute('data-active', '');
+      const firstShow = indicator.style.opacity !== '1';
+      if (firstShow) indicator.style.transition = 'none';
+      const rect = el.getBoundingClientRect();
+      const parentRect = pill.getBoundingClientRect();
+      indicator.style.width = `${rect.width}px`;
+      indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
+      indicator.style.opacity = '1';
+      if (firstShow) requestAnimationFrame(() => { indicator.style.transition = ''; });
+    };
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        hoveredLink = link;
+        moveTo(link);
+      });
+      link.addEventListener('click', () => {
+        activeLink = link;
+        moveTo(link);
+      });
+    });
+
+    pill.addEventListener('mouseleave', () => {
+      hoveredLink = null;
+      moveTo(activeLink);
+    });
+
+    const sectionToLink = new Map<Element, HTMLAnchorElement>();
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      const section = document.querySelector(href);
+      if (section) sectionToLink.set(section, link);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const link = sectionToLink.get(entry.target);
+          if (link) {
+            activeLink = link;
+            if (!hoveredLink) moveTo(link);
+          }
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    sectionToLink.forEach((_, section) => observer.observe(section));
+
+    window.addEventListener('resize', () => moveTo(hoveredLink || activeLink));
   }
 </script>

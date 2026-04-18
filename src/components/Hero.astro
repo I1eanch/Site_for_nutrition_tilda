@@ -1,64 +1,127 @@
 ---
-import { Image } from 'astro:assets';
-import Button from './ui/Button.astro';
-import heroBg from '../assets/img/hero-bg-new.png';
+import { Image } from "astro:assets";
+import Button from "./ui/Button.astro";
+import heroBg from "../assets/img/hero-bg-new.png";
 ---
 
 <section class="pt-20 relative overflow-hidden bg-white">
   <!-- Atmospheric green gradient -->
-  <div class="hero-glow absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 50% 0%, rgba(24,226,153,0.08), transparent 70%); opacity: 0.06;"></div>
+  <div
+    class="hero-glow absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse at 50% 0%, rgba(24,226,153,0.08), transparent 70%); opacity: 0.06;"
+  >
+  </div>
   <!-- Generated background image -->
   <div class="absolute inset-0 pointer-events-none opacity-40">
-    <Image src={heroBg} alt="" class="w-full h-full object-cover" widths={[1920]} sizes="100vw" />
+    <Image
+      src={heroBg}
+      alt=""
+      class="w-full h-full object-cover"
+      widths={[1920]}
+      sizes="100vw"
+    />
   </div>
 
-  <div class="relative z-10 max-w-[1100px] mx-auto px-12 py-14 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center max-md:px-5 max-md:py-10 max-md:gap-8">
+  <div
+    class="relative z-10 max-w-[1100px] mx-auto px-12 py-14 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center max-md:px-5 max-md:py-10 max-md:gap-8"
+  >
     <div class="rv min-w-0">
-      <div class="inline-flex items-center gap-2 bg-brand-light border border-brand/20 rounded-full px-4 py-1.5 text-[11px] font-bold text-brand-deep tracking-[0.1em] uppercase mb-5">
-        Онлайн-программа · 30 дней · Результат с первой недели
+      <div
+        class="inline-flex items-center gap-2 bg-brand-light border border-brand/20 rounded-full px-4 py-1.5 text-[11px] font-bold text-brand-deep tracking-[0.1em] uppercase mb-5"
+      >
+        Онлайн-программа · 30 дней · Результат с второй недели
       </div>
-      <div class="text-xs text-gray-400 font-medium mb-2 tracking-[0.03em]">Академия натуропатии «Система здоровья»</div>
-      <h1 class="text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-[1.12] mb-4.5 tracking-[--tracking-display]">
+      <div class="text-xs text-gray-400 font-medium mb-2 tracking-[0.03em]">
+        Академия натуропатии «Система здоровья»
+      </div>
+      <h1
+        class="text-[clamp(30px,4vw,50px)] font-semibold text-primary leading-[1.12] mb-4.5 tracking-[--tracking-display]"
+      >
         САМ СЕБЕ<br />
         <span class="text-brand">НУТРИЦИОЛОГ</span><br />
-        <span class="text-[clamp(18px,2.2vw,28px)] text-gray-500 font-semibold leading-relaxed">от причины — к здоровому телу</span>
+        <span
+          class="text-[clamp(18px,2.2vw,28px)] text-gray-500 font-semibold leading-relaxed"
+          >от причины — к здоровому телу</span
+        >
       </h1>
       <p class="text-[15px] text-gray-700 leading-[1.75] mb-5 max-w-[540px]">
-        Мы не лечим каждый симптом по отдельности. За 30 дней вы поймёте, <strong class="text-primary font-bold">почему организм даёт сбой</strong>, и запустите восстановление через работу со стрессом, ЖКТ и детоксикацией — <strong class="text-primary font-bold">широким фронтом</strong>.
+        Мы не лечим каждый симптом по отдельности. За 30 дней вы поймёте, <strong
+          class="text-primary font-bold">почему организм даёт сбой</strong
+        >, и запустите восстановление через работу со стрессом, ЖКТ и
+        детоксикацией — <strong class="text-primary font-bold"
+          >широким фронтом</strong
+        >.
       </p>
       <!-- Marquee pills -->
-      <div class="mb-8 overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);">
+      <div
+        class="mb-8 overflow-hidden"
+        style="mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);"
+      >
         <div class="flex flex-col gap-2.5">
           <div class="marquee-left flex gap-2.5 w-max">
-            {[...Array(3)].map(() => (
-              <>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Вздутие и ЖКТ</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Нет энергии</span>
-                <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">Отёки</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Щитовидка</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Гормоны</span>
-                <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">Давление</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Кожа и волосы</span>
-              </>
-            ))}
+            {
+              [...Array(3)].map(() => (
+                <>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Вздутие и ЖКТ
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Нет энергии
+                  </span>
+                  <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">
+                    Отёки
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Щитовидка
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Гормоны
+                  </span>
+                  <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">
+                    Давление
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Кожа и волосы
+                  </span>
+                </>
+              ))
+            }
           </div>
           <div class="marquee-right flex gap-2.5 w-max">
-            {[...Array(3)].map(() => (
-              <>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Потливость</span>
-                <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">Либидо</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Лишний вес</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Усталость</span>
-                <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">Метеоризм</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Тревожность</span>
-                <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">Сон</span>
-              </>
-            ))}
+            {
+              [...Array(3)].map(() => (
+                <>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Потливость
+                  </span>
+                  <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">
+                    Либидо
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Лишний вес
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Усталость
+                  </span>
+                  <span class="border border-brand/25 rounded-full px-4 py-1.5 text-xs font-semibold text-brand bg-brand/5 whitespace-nowrap">
+                    Метеоризм
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Тревожность
+                  </span>
+                  <span class="border border-border-md rounded-full px-4 py-1.5 text-xs font-semibold text-primary bg-white whitespace-nowrap">
+                    Сон
+                  </span>
+                </>
+              ))
+            }
           </div>
         </div>
       </div>
       <div class="flex gap-3.5 flex-wrap">
-        <Button variant="primary" href="#pricing">Записаться на программу</Button>
+        <Button variant="primary" href="#pricing"
+          >Записаться на программу</Button
+        >
         <Button variant="outline" href="#symptoms">Узнаю ли я себя?</Button>
       </div>
     </div>
@@ -66,56 +129,138 @@ import heroBg from '../assets/img/hero-bg-new.png';
     <!-- Hero card with shine border -->
     <div class="rv relative rounded-3xl" style="padding: 2px;">
       <div class="absolute inset-0 rounded-3xl overflow-hidden">
-        <div class="absolute -inset-full blur-sm animate-spin" style="background: conic-gradient(#18E299, #0fa76e, transparent 50%, #18E299); animation-duration: 4s;"></div>
+        <div
+          class="absolute -inset-full blur-sm animate-spin"
+          style="background: conic-gradient(#18E299, #0fa76e, transparent 50%, #18E299); animation-duration: 4s;"
+        >
+        </div>
       </div>
       <div class="bg-white rounded-3xl p-[38px_34px] shadow-card relative">
-      <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand text-primary text-[11px] font-bold px-4 py-1 rounded-full whitespace-nowrap tracking-[0.06em] uppercase z-10">
-        Программа · 30 дней
-      </div>
-      <div class="text-[11px] text-gray-400 font-bold tracking-[0.1em] uppercase mb-2.5">Что вы получите</div>
-      <div class="text-xl font-extrabold text-primary leading-snug mb-5">
-        Системное восстановление<br />организма <span class="text-brand">широким фронтом</span>
-      </div>
-      <ul class="list-none flex flex-col gap-2.5 mb-6">
-        <li class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug">
-          <span class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0fa76e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          26 уроков — от причины к восстановлению
-        </li>
-        <li class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug">
-          <span class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0fa76e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Поддержка кураторов-нутрициологов каждый день
-        </li>
-        <li class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug">
-          <span class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0fa76e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Ежедневные практики и чек-листы
-        </li>
-        <li class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug">
-          <span class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0fa76e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          6 бонусных модулей в подарок
-        </li>
-        <li class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug">
-          <span class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0fa76e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Результаты уже с первой недели
-        </li>
-        <li class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug">
-          <span class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#0fa76e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          Доступ к материалам 5 месяцев
-        </li>
-      </ul>
-      <Button variant="brand" href="#pricing" fullWidth>Узнать стоимость и записаться</Button>
-      <div class="text-center text-sm font-semibold text-primary/60 mt-3">Следующий поток · ограниченный набор</div>
+        <div
+          class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand text-primary text-[11px] font-bold px-4 py-1 rounded-full whitespace-nowrap tracking-[0.06em] uppercase z-10"
+        >
+          Программа · 30 дней
+        </div>
+        <div
+          class="text-[11px] text-gray-400 font-bold tracking-[0.1em] uppercase mb-2.5"
+        >
+          Что вы получите
+        </div>
+        <div class="text-xl font-extrabold text-primary leading-snug mb-5">
+          Системное восстановление<br />организма <span class="text-brand"
+            >широким фронтом</span
+          >
+        </div>
+        <ul class="list-none flex flex-col gap-2.5 mb-6">
+          <li
+            class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug"
+          >
+            <span
+              class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5"
+            >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                ><path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#0fa76e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+            </span>
+            26 уроков — от причины к восстановлению
+          </li>
+          <li
+            class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug"
+          >
+            <span
+              class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5"
+            >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                ><path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#0fa76e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+            </span>
+            Поддержка кураторов-нутрициологов каждый день
+          </li>
+          <li
+            class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug"
+          >
+            <span
+              class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5"
+            >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                ><path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#0fa76e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+            </span>
+            Ежедневные практики и чек-листы
+          </li>
+          <li
+            class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug"
+          >
+            <span
+              class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5"
+            >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                ><path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#0fa76e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+            </span>
+            6 бонусных модулей в подарок
+          </li>
+          <li
+            class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug"
+          >
+            <span
+              class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5"
+            >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                ><path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#0fa76e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+            </span>
+            Результаты уже с второй недели
+          </li>
+          <li
+            class="flex items-start gap-2.5 text-[13px] text-gray-700 leading-snug"
+          >
+            <span
+              class="w-[18px] h-[18px] min-w-[18px] rounded-full bg-brand-light border border-brand/20 flex items-center justify-center mt-0.5"
+            >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
+                ><path
+                  d="M1 4L3.5 6.5L9 1"
+                  stroke="#0fa76e"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg
+              >
+            </span>
+            Доступ к материалам 5 месяцев
+          </li>
+        </ul>
+        <Button variant="brand" href="#pricing" fullWidth
+          >Предзапись на программу</Button
+        >
+        <div class="text-center text-sm font-semibold text-primary/60 mt-3">
+          Следующий поток · ограниченный набор
+        </div>
       </div>
     </div>
   </div>
@@ -123,12 +268,20 @@ import heroBg from '../assets/img/hero-bg-new.png';
 
 <style is:global>
   @keyframes marquee-l {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
   @keyframes marquee-r {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
   .marquee-left {
     animation: marquee-l 30s linear infinite;

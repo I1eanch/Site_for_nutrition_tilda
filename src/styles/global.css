@@ -98,3 +98,129 @@ body {
 .tab-content.active {
   display: block;
 }
+
+/* === Legal pages (oferta, privacy, consent) === */
+.prose-legal {
+  color: var(--color-gray-700);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.prose-legal h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid #18E299;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-subhead);
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.prose-legal h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: var(--color-gray-50);
+  border-left: 3px solid #18E299;
+  border-radius: 0 4px 4px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.prose-legal p {
+  margin-bottom: 0.75rem;
+}
+
+.prose-legal ul,
+.prose-legal ol {
+  margin-bottom: 0.85rem;
+  padding-left: 1.5rem;
+}
+
+.prose-legal ul { list-style: disc; }
+.prose-legal ol { list-style: decimal; }
+
+.prose-legal li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-legal a {
+  color: var(--color-brand-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-legal a:hover {
+  color: var(--color-brand);
+}
+
+.prose-legal a[href$=".pdf"],
+.pdf-dl {
+  display: inline-block !important;
+  background: #18E299 !important;
+  color: #0d0d0d !important;
+  font-weight: 600 !important;
+  padding: 2px 10px !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  margin: 0 2px !important;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.prose-legal a[href$=".pdf"]::after,
+.pdf-dl::after {
+  content: " ↓";
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.prose-legal a[href$=".pdf"]:hover,
+.pdf-dl:hover {
+  background: #0fa76e !important;
+  color: #ffffff !important;
+}
+
+.prose-legal strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.prose-legal hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.prose-legal table {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.prose-legal th,
+.prose-legal td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border-md);
+  text-align: left;
+  vertical-align: top;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.prose-legal th {
+  background: var(--color-gray-50);
+  font-weight: 600;
+  color: var(--color-primary);
+}

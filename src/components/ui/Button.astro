@@ -2,6 +2,7 @@
 interface Props {
   variant?: 'primary' | 'brand' | 'outline' | 'ghost';
   href?: string;
+  target?: string;
   fullWidth?: boolean;
   class?: string;
 }
@@ -9,6 +10,7 @@ interface Props {
 const {
   variant = 'primary',
   href,
+  target,
   fullWidth = false,
   class: className = '',
 } = Astro.props;
@@ -27,7 +29,7 @@ const classes = `${base} ${variants[variant]} ${width} ${className}`.trim();
 ---
 
 {href ? (
-  <a href={href} class={classes}>
+  <a href={href} target={target} class={classes}>
     <slot />
   </a>
 ) : (
